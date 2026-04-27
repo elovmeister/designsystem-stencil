@@ -1,0 +1,17 @@
+:host {
+    display: inline-flex;
+    width: var(--lm-prototype-stencil-icon-size, 1em);
+    height: var(--lm-prototype-stencil-icon-size, 1em);
+    color: inherit;
+    flex-shrink: 0;
+}
+
+.svg-wrapper {
+    display: contents;
+}
+
+svg {
+    width: 100%;
+    height: 100%;
+    stroke-width: var(--lm-prototype-stencil-icon-stroke-width, 2);
+}

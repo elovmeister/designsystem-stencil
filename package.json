@@ -1,7 +1,18 @@
 {
   "name": "design-system-stencil",
   "private": true,
-  "scripts": {},
+  "scripts": {
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "lint": "turbo run lint",
+    "dev": "turbo run dev --parallel --filter=./packages/*",
+    "storybook": "turbo run dev storybook --parallel --filter=@lm-prototype-stencil/components...",
+    "dev:react": "turbo run dev --parallel --filter=@lm-prototype-stencil/test-react...",
+    "dev:angular": "turbo run dev --parallel --filter=@lm-prototype-stencil/test-angular...",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "turbo run build && changeset publish"
+  },
   "devDependencies": {
     "turbo": "^2.9.6",
     "typescript": "^6.0.3"

@@ -1,0 +1,16 @@
+:host {
+    display: inline-block;
+}
+button {
+    background-color: var(--lm-prototype-stencil-color-action-primary);
+    color: white;
+    padding: var(--lm-prototype-stencil-space-2) var(--lm-prototype-stencil-space-4);
+    border: none;
+    border-radius: var(--lm-prototype-stencil-radius-md);
+    cursor: pointer;
+    font-family: inherit;
+}
+:host([disabled]) button {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

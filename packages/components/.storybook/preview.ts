@@ -1,0 +1,18 @@
+import type { Preview } from "@storybook/web-components";
+
+import '@lm-prototype-stencil/tokens/themes/light.css';
+
+import '../dist/components/index.js';
+
+const preview: Preview = {
+    parameters: {
+        controls: {
+            matchers: {
+                color: /(background|color)$/i,
+                date: /Date$/i,
+            },
+        },
+    },
+};
+
+export default preview;
