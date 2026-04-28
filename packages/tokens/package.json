@@ -1,11 +1,11 @@
 {
   "name": "@lm-prototype-stencil/tokens",
   "version": "0.1.0",
-  "type": "module",
+  "description": "Design tokens for the design system",
+  "main": "dist/tokens.json",
   "exports": {
-    "./themes/light.css": "./dist/themes/light.css",
-    "./themes/dark.css": "./dist/themes/dark.css",
-    "./tokens.json": "./dist/tokens.json"
+    ".": "./dist/tokens.json",
+    "./*": "./*"
   },
   "scripts": {
     "build": "node build.mjs",
