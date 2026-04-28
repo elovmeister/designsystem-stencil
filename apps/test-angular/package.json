@@ -1,5 +1,5 @@
 {
-  "name": "@lm-prototype/test-angular",
+  "name": "@lm-prototype-stencil/test-angular",
   "version": "0.0.3",
   "scripts": {
     "ng": "ng",
@@ -26,9 +26,8 @@
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.10",
-    "@lm-prototype/icons": "workspace:*",
-    "@lm-prototype/components": "workspace:*",
-    "@lm-prototype/tokens": "workspace:*"
+    "@lm-prototype-stencil/components": "workspace:*",
+    "@lm-prototype-stencil/tokens": "workspace:*"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^18.2.21",

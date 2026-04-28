@@ -1,8 +1,17 @@
 {
-  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "dist",
-    "rootDir": "src"
+    "module": "es2022",
+    "target": "es2022",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "declaration": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "types": [
+      "@lm-prototype-stencil/components"
+    ]
   },
-  "include": ["src/**/*"]
+  "include": [
+    "src"
+  ]
 }

@@ -16,10 +16,25 @@
       "import": "./dist/index.js",
       "default": "./dist/index.js"
     },
+    "./components": {
+      "types": "./dist/types/components.d.ts",
+      "import": "./dist/components/index.js",
+      "default": "./dist/components/index.js"
+    },
+    "./components/*": {
+      "types": "./dist/types/components.d.ts",
+      "import": "./dist/components/*",
+      "default": "./dist/components/*"
+    },
     "./dist/components": {
       "types": "./dist/types/components.d.ts",
       "import": "./dist/components/index.js",
       "default": "./dist/components/index.js"
+    },
+    "./loader": {
+      "types": "./loader/index.d.ts",
+      "import": "./loader/index.js",
+      "default": "./loader/index.js"
     },
     "./dist/*": "./dist/*"
   },

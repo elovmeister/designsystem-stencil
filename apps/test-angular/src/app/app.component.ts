@@ -1,8 +1,7 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import '@lm-prototype/components/lm-prototype-button';
-import '@lm-prototype/components/lm-prototype-dropdown';
+import { LmPrototypeStencilButton, LmPrototypeStencilIcon } from '@lm-prototype-stencil/components-angular';
 
 interface ButtonDemo {
   variant: 'primary' | 'secondary' | 'tertiary' | 'danger';
@@ -12,63 +11,63 @@ interface ButtonDemo {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, LmPrototypeStencilButton, LmPrototypeStencilIcon],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   template: `
     <div class="app">
       <header class="app-header">
         <h1>Design System — Angular Test App</h1>
-        <lm-prototype-button variant="tertiary" (click)="toggleTheme()">
+        <lm-prototype-stencil-button variant="tertiary" (click)="toggleTheme()">
           {{ darkMode ? '☀️ Light' : '🌙 Dark' }}
-        </lm-prototype-button>
+        </lm-prototype-stencil-button>
       </header>
 
       <main class="app-main">
         <section class="demo-section">
           <h2 class="demo-title">Variants</h2>
           <div class="demo-row">
-            <lm-prototype-button variant="primary">Primary</lm-prototype-button>
-            <lm-prototype-button variant="secondary">Secondary</lm-prototype-button>
-            <lm-prototype-button variant="tertiary">Tertiary</lm-prototype-button>
-            <lm-prototype-button variant="danger">Danger</lm-prototype-button>
+            <lm-prototype-stencil-button variant="primary">Primary</lm-prototype-stencil-button>
+            <lm-prototype-stencil-button variant="secondary">Secondary</lm-prototype-stencil-button>
+            <lm-prototype-stencil-button variant="tertiary">Tertiary</lm-prototype-stencil-button>
+            <lm-prototype-stencil-button variant="danger">Danger</lm-prototype-stencil-button>
           </div>
         </section>
 
         <section class="demo-section">
           <h2 class="demo-title">Sizes</h2>
           <div class="demo-row">
-            <lm-prototype-button size="sm">Small</lm-prototype-button>
-            <lm-prototype-button size="md">Medium</lm-prototype-button>
-            <lm-prototype-button size="lg">Large</lm-prototype-button>
+            <lm-prototype-stencil-button size="sm">Small</lm-prototype-stencil-button>
+            <lm-prototype-stencil-button size="md">Medium</lm-prototype-stencil-button>
+            <lm-prototype-stencil-button size="lg">Large</lm-prototype-stencil-button>
           </div>
         </section>
 
         <section class="demo-section">
           <h2 class="demo-title">With Icons</h2>
           <div class="demo-row">
-            <lm-prototype-button variant="primary">
-              <lm-prototype-icon slot="start" name="arrow-right"></lm-prototype-icon>
+            <lm-prototype-stencil-button variant="primary">
+              <lm-prototype-stencil-icon slot="start" name="arrow-right"></lm-prototype-stencil-icon>
               Continue
-            </lm-prototype-button>
-            <lm-prototype-button variant="secondary">
+            </lm-prototype-stencil-button>
+            <lm-prototype-stencil-button variant="secondary">
               Save
-              <lm-prototype-icon slot="end" name="check"></lm-prototype-icon>
-            </lm-prototype-button>
-            <lm-prototype-button variant="danger">
-              <lm-prototype-icon slot="start" name="x"></lm-prototype-icon>
+              <lm-prototype-stencil-icon slot="end" name="check"></lm-prototype-stencil-icon>
+            </lm-prototype-stencil-button>
+            <lm-prototype-stencil-button variant="danger">
+              <lm-prototype-stencil-icon slot="start" name="x"></lm-prototype-stencil-icon>
               Remove
-            </lm-prototype-button>
+            </lm-prototype-stencil-button>
           </div>
         </section>
 
         <section class="demo-section">
           <h2 class="demo-title">States</h2>
           <div class="demo-row">
-            <lm-prototype-button [attr.loading]="loading || null" (click)="simulateAsync()">
+            <lm-prototype-stencil-button [loading]="loading" (click)="simulateAsync()">
               {{ loading ? 'Saving…' : 'Click to load (2s)' }}
-            </lm-prototype-button>
-            <lm-prototype-button disabled>Disabled</lm-prototype-button>
-            <lm-prototype-button loading>Always loading</lm-prototype-button>
+            </lm-prototype-stencil-button>
+            <lm-prototype-stencil-button disabled>Disabled</lm-prototype-stencil-button>
+            <lm-prototype-stencil-button loading>Always loading</lm-prototype-stencil-button>
           </div>
         </section>
 
@@ -80,36 +79,16 @@ interface ButtonDemo {
               placeholder="Type something…"
               class="demo-input"
             />
-            <lm-prototype-button type="submit">Submit</lm-prototype-button>
-            <lm-prototype-button type="reset" variant="tertiary">Reset</lm-prototype-button>
+            <lm-prototype-stencil-button type="submit">Submit</lm-prototype-stencil-button>
+            <lm-prototype-stencil-button type="reset" variant="tertiary">Reset</lm-prototype-stencil-button>
           </form>
         </section>
 
-        <section class="demo-section">
-          <h2 class="demo-title">Dropdown</h2>
-          <div style="min-height: 250px;">
-            <lm-prototype-dropdown variant="primary" size="lg">
-              <span slot="label">Options</span>
-
-              <div style="padding: 8px; display: flex; flex-direction: column; gap: 4px; min-width: 180px;">
-                <a href="#"
-                   style="padding: 8px 12px; border-radius: 4px; cursor: pointer; font-size: 14px; font-family: system-ui, sans-serif; color: #374151; text-decoration: none;">Account
-                  settings</a>
-                <a href="#"
-                   style="padding: 8px 12px; border-radius: 4px; cursor: pointer; font-size: 14px; font-family: system-ui, sans-serif; color: #374151; text-decoration: none;">Support</a>
-                <hr style="border: 0; border-top: 1px solid #e5e7eb; margin: 4px 0;">
-                <a href="#"
-                   style="padding: 8px 12px; border-radius: 4px; cursor: pointer; font-size: 14px; font-family: system-ui, sans-serif; color: #374151; text-decoration: none; color: #dc2626;">Sign
-                  out</a>
-              </div>
-
-            </lm-prototype-dropdown>
-          </div>
-        </section>
       </main>
     </div>
   `,
   styles: [`
+    /* Dina stilar är perfekta, behåller dem precis som de är! */
     .app {
       padding: 40px;
       min-height: 100vh;
@@ -121,7 +100,7 @@ interface ButtonDemo {
       align-items: center;
       margin-bottom: 40px;
       padding-bottom: 20px;
-      border-bottom: 1px solid var(--lm-prototype-color-border-default);
+      border-bottom: 1px solid var(--lm-prototype-stencil-color-border-default);
     }
 
     h1 {
@@ -139,7 +118,7 @@ interface ButtonDemo {
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      color: var(--lm-prototype-color-text-secondary);
+      color: var(--lm-prototype-stencil-color-text-secondary);
       margin: 0 0 12px;
     }
 
@@ -158,16 +137,16 @@ interface ButtonDemo {
 
     .demo-input {
       padding: 8px 12px;
-      border: 1px solid var(--lm-prototype-color-border-default);
-      border-radius: var(--lm-prototype-radius-md);
-      background: var(--lm-prototype-color-surface-raised);
-      color: var(--lm-prototype-color-text-primary);
-      font-size: var(--lm-prototype-font-size-md);
+      border: 1px solid var(--lm-prototype-stencil-color-border-default);
+      border-radius: var(--lm-prototype-stencil-radius-md);
+      background: var(--lm-prototype-stencil-color-surface-raised);
+      color: var(--lm-prototype-stencil-color-text-primary);
+      font-size: var(--lm-prototype-stencil-font-size-md);
       font-family: inherit;
     }
 
     .demo-input:focus {
-      outline: 2px solid var(--lm-prototype-color-border-focus);
+      outline: 2px solid var(--lm-prototype-stencil-color-border-focus);
       outline-offset: 2px;
     }
   `],
