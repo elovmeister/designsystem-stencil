@@ -13,6 +13,7 @@ export const config: Config = {
         {
             type: 'dist-custom-elements',
             dir: 'dist/components',
+            customElementsExportBehavior: 'auto-define-custom-elements',
             externalRuntime: false,
         },
         {

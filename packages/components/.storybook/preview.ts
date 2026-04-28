@@ -1,9 +1,7 @@
 import type { Preview } from "@storybook/web-components";
 import '@lm-prototype-stencil/tokens/themes/light.css';
 
-import { defineCustomElements } from '../dist/components/index.js';
-
-defineCustomElements();
+import '../dist/components/index.js';
 
 const preview: Preview = {
     parameters: {

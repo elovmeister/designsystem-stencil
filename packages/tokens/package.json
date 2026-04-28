@@ -5,6 +5,7 @@
   "main": "dist/tokens.json",
   "exports": {
     ".": "./dist/tokens.json",
+    "./themes/*": "./dist/themes/*",
     "./*": "./*"
   },
   "scripts": {
