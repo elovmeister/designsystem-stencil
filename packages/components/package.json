@@ -25,8 +25,8 @@
   },
   "scripts": {
     "build": "stencil build",
-    "dev": "stencil build --dev --watch",
-    "storybook": "storybook dev -p 6006 --config-dir .storybook"
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@lm-prototype-stencil/tokens": "workspace:*"

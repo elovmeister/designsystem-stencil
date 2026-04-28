@@ -7,10 +7,10 @@
 
 ## Properties
 
-| Property   | Attribute  | Description                                  | Type                                   | Default     |
-| ---------- | ---------- | -------------------------------------------- | -------------------------------------- | ----------- |
-| `disabled` | `disabled` | Inaktiverar knappen                          | `boolean`                              | `false`     |
-| `variant`  | `variant`  | Vilken typ av knapp (primary, secondary etc) | `"danger" \| "primary" \| "secondary"` | `'primary'` |
+| Property   | Attribute  | Description | Type                                   | Default     |
+| ---------- | ---------- | ----------- | -------------------------------------- | ----------- |
+| `disabled` | `disabled` |             | `boolean`                              | `false`     |
+| `variant`  | `variant`  |             | `"danger" \| "primary" \| "secondary"` | `'primary'` |
 
 
 ----------------------------------------------

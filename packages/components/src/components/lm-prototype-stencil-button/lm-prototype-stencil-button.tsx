@@ -5,11 +5,9 @@ import { Component, Prop, h, Host } from '@stencil/core';
     styleUrl: 'lm-prototype-stencil-button.css',
     shadow: true,
 })
-export class DsButton {
-    /** Vilken typ av knapp (primary, secondary etc) */
+export class LmPrototypeStencilButton {
     @Prop({ reflect: true }) variant: 'primary' | 'secondary' | 'danger' = 'primary';
 
-    /** Inaktiverar knappen */
     @Prop({ reflect: true }) disabled = false;
 
     render() {

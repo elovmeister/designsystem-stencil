@@ -14,6 +14,7 @@ export const config: Config = {
             type: 'dist-custom-elements',
             customElementsExportBehavior: 'auto-define-custom-elements',
             externalRuntime: false,
+            dir: 'dist/components'
         },
         {
             type: 'docs-readme',

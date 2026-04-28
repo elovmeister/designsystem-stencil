@@ -17,7 +17,7 @@ const config: StorybookConfig = {
             server: {
                 ...config.server,
                 fs: {
-                    allow: ['../..'],
+                    allow: ['../../..'],
                 },
             },
         };

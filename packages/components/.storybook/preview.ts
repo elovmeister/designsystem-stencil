@@ -1,6 +1,7 @@
 import type { Preview } from "@storybook/web-components";
 
 import '@lm-prototype-stencil/tokens/themes/light.css';
+import '@lm-prototype-stencil/tokens/themes/dark.css';
 
 import '../dist/components/index.js';
 

@@ -10,12 +10,10 @@ export { IconName } from "./utils/icon-registry";
 export namespace Components {
     interface LmPrototypeStencilButton {
         /**
-          * Inaktiverar knappen
           * @default false
          */
         "disabled": boolean;
         /**
-          * Vilken typ av knapp (primary, secondary etc)
           * @default 'primary'
          */
         "variant": 'primary' | 'secondary' | 'danger';
@@ -48,12 +46,10 @@ declare namespace LocalJSX {
 
     interface LmPrototypeStencilButton {
         /**
-          * Inaktiverar knappen
           * @default false
          */
         "disabled"?: boolean;
         /**
-          * Vilken typ av knapp (primary, secondary etc)
           * @default 'primary'
          */
         "variant"?: 'primary' | 'secondary' | 'danger';
