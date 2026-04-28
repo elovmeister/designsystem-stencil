@@ -10,13 +10,30 @@ export { IconName } from "./utils/icon-registry";
 export namespace Components {
     interface LmPrototypeStencilButton {
         /**
+          * Disables the button
           * @default false
          */
         "disabled": boolean;
         /**
+          * Shows a loading state
+          * @default false
+         */
+        "loading": boolean;
+        /**
+          * Size variant
+          * @default 'md'
+         */
+        "size": 'sm' | 'md' | 'lg';
+        /**
+          * Standard button type
+          * @default 'button'
+         */
+        "type": 'button' | 'submit' | 'reset';
+        /**
+          * Visual variant
           * @default 'primary'
          */
-        "variant": 'primary' | 'secondary' | 'danger';
+        "variant": 'primary' | 'secondary' | 'tertiary' | 'danger';
     }
     interface LmPrototypeStencilIcon {
         "label"?: string;
@@ -46,13 +63,30 @@ declare namespace LocalJSX {
 
     interface LmPrototypeStencilButton {
         /**
+          * Disables the button
           * @default false
          */
         "disabled"?: boolean;
         /**
+          * Shows a loading state
+          * @default false
+         */
+        "loading"?: boolean;
+        /**
+          * Size variant
+          * @default 'md'
+         */
+        "size"?: 'sm' | 'md' | 'lg';
+        /**
+          * Standard button type
+          * @default 'button'
+         */
+        "type"?: 'button' | 'submit' | 'reset';
+        /**
+          * Visual variant
           * @default 'primary'
          */
-        "variant"?: 'primary' | 'secondary' | 'danger';
+        "variant"?: 'primary' | 'secondary' | 'tertiary' | 'danger';
     }
     interface LmPrototypeStencilIcon {
         "label"?: string;
@@ -60,8 +94,11 @@ declare namespace LocalJSX {
     }
 
     interface LmPrototypeStencilButtonAttributes {
-        "variant": 'primary' | 'secondary' | 'danger';
+        "variant": 'primary' | 'secondary' | 'tertiary' | 'danger';
+        "size": 'sm' | 'md' | 'lg';
+        "type": 'button' | 'submit' | 'reset';
         "disabled": boolean;
+        "loading": boolean;
     }
     interface LmPrototypeStencilIconAttributes {
         "name": IconName;

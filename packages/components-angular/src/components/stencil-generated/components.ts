@@ -8,14 +8,14 @@ import { Components } from '@lm-prototype-stencil/components';
 
 
 @ProxyCmp({
-  inputs: ['disabled', 'variant']
+  inputs: ['disabled', 'loading', 'size', 'type', 'variant']
 })
 @Component({
   selector: 'lm-prototype-stencil-button',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['disabled', 'variant'],
+  inputs: ['disabled', 'loading', 'size', 'type', 'variant'],
   standalone: false
 })
 export class LmPrototypeStencilButton {
