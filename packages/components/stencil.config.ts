@@ -24,7 +24,7 @@ export const config: Config = {
         }),
         angularOutputTarget({
             componentCorePackage: '@lm-prototype-stencil/components',
-            outputType: 'component',
+            outputType: 'standalone',
             directivesProxyFile: '../components-angular/src/components/stencil-generated/components.ts',
             directivesArrayFile: '../components-angular/src/components/stencil-generated/index.ts',
         }),
