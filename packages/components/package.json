@@ -22,7 +22,7 @@
       "default": "./dist/components/index.js"
     },
     "./components/*": {
-      "types": "./dist/types/components.d.ts",
+      "types": "./dist/components/*.d.ts",
       "import": "./dist/components/*",
       "default": "./dist/components/*"
     },

@@ -13,9 +13,10 @@ export default function App() {
               onClick={() => alert('Det fungerar!')}
           >
             Klicka på mig
+              <LmPrototypeStencilIcon name="check" style={{ fontSize: '24px', color: 'green' }} />
           </LmPrototypeStencilButton>
 
-          <LmPrototypeStencilIcon name="check" style={{ fontSize: '24px', color: 'green' }} />
+
 
         </div>
       </div>

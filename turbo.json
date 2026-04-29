@@ -7,6 +7,14 @@
       "inputs": ["src/**", "*.mjs", "package.json", "tsconfig.json", "vite.config.ts"],
       "outputs": ["dist/**"]
     },
+    "@lm-prototype-stencil/components#build": {
+      "dependsOn": ["^build"],
+      "outputs": [
+        "dist/**",
+        "../components-angular/src/components/stencil-generated/**",
+        "../components-react/src/components/stencil-generated/**"
+      ]
+    },
     "dev": {
       "cache": false,
       "persistent": true
