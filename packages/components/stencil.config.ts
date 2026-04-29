@@ -21,6 +21,7 @@ export const config: Config = {
         },
         reactOutputTarget({
             outDir: '../components-react/src/components/stencil-generated/',
+            
         }),
         angularOutputTarget({
             componentCorePackage: '@lm-prototype-stencil/components',
