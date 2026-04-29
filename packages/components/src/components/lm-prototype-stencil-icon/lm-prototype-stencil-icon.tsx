@@ -17,7 +17,6 @@ export class DsIcon {
             return <slot></slot>;
         }
 
-        // Vi bygger hela SVG-taggen som en sträng här istället
         const svgContent = `
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -37,7 +36,6 @@ export class DsIcon {
                 aria-label={this.label ? this.label : null}
                 role={this.label ? 'img' : null}
             >
-                {/* Vi sätter innerHTML på en standard HTML-tagg (span) istället */}
                 <span class="svg-wrapper" innerHTML={svgContent}></span>
             </Host>
         );

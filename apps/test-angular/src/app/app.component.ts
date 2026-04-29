@@ -11,7 +11,7 @@ interface ButtonDemo {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, LmPrototypeStencilButton, LmPrototypeStencilIcon],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   template: `
     <div class="app">
@@ -73,14 +73,19 @@ interface ButtonDemo {
 
         <section class="demo-section">
           <h2 class="demo-title">Form Participation</h2>
-          <form (submit)="onSubmit($event)" class="demo-form">
+          <form #demoForm (submit)="onSubmit($event)" class="demo-form">
             <input
               name="q"
               placeholder="Type something…"
               class="demo-input"
             />
-            <lm-prototype-stencil-button type="submit">Submit</lm-prototype-stencil-button>
-            <lm-prototype-stencil-button type="reset" variant="tertiary">Reset</lm-prototype-stencil-button>
+            <lm-prototype-stencil-button type="submit" (click)="demoForm.requestSubmit()">
+              Submit
+            </lm-prototype-stencil-button>
+
+            <lm-prototype-stencil-button type="reset" variant="tertiary" (click)="demoForm.reset()">
+              Reset
+            </lm-prototype-stencil-button>
           </form>
         </section>
 
