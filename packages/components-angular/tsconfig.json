@@ -12,6 +12,7 @@
     ]
   },
   "include": [
-    "src"
+    "src",
+    "../components/src/components.d.ts"
   ]
 }

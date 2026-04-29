@@ -11,7 +11,7 @@ interface ButtonDemo {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, LmPrototypeStencilButton, LmPrototypeStencilIcon],
+  imports: [CommonModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   template: `
     <div class="app">
