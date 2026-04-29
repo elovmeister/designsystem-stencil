@@ -1,5 +1,18 @@
 # @lm-prototype-stencil/components
 
+## 0.4.0
+
+### Minor Changes
+
+- e686e47: finally builds
+
+### Patch Changes
+
+- bd85079: new angular component
+- Updated dependencies [e686e47]
+- Updated dependencies [bd85079]
+  - @lm-prototype-stencil/tokens@0.3.0
+
 ## 0.3.1
 
 ### Patch Changes
