@@ -13,7 +13,7 @@ export const config: Config = {
         {
             type: 'dist-custom-elements',
             dir: 'dist/components',
-            customElementsExportBehavior: 'auto-define-custom-elements',
+            customElementsExportBehavior: 'single-export-module',
             externalRuntime: false,
         },
         {
@@ -23,8 +23,8 @@ export const config: Config = {
             outDir: '../components-react/src/components/stencil-generated/',
         }),
         angularOutputTarget({
-            componentCorePackage: '@lm-prototype-stencil/components',
-            outputType: 'standalone',
+            componentCorePackage: '@lm-prototype-stencil/components/dist',
+            outputType: 'component',
             directivesProxyFile: '../components-angular/src/components/stencil-generated/components.ts',
             directivesArrayFile: '../components-angular/src/components/stencil-generated/index.ts',
         }),

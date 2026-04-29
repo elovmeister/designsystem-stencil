@@ -1,7 +1,7 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { LmPrototypeStencilButton, LmPrototypeStencilIcon } from '@lm-prototype-stencil/components-angular';
+import { LmPrototypeComponentsModule} from '@lm-prototype-stencil/components-angular';
 
 interface ButtonDemo {
   variant: 'primary' | 'secondary' | 'tertiary' | 'danger';
@@ -11,7 +11,7 @@ interface ButtonDemo {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, LmPrototypeStencilButton, LmPrototypeStencilIcon],
+  imports: [CommonModule, LmPrototypeComponentsModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   template: `
     <div class="app">

@@ -12,6 +12,7 @@ export class LmPrototypeStencilButton {
     /** Size variant */
     @Prop({ reflect: true }) size: 'sm' | 'md' | 'lg' = 'md';
 
+
     /** Standard button type */
     @Prop() type: 'button' | 'submit' | 'reset' = 'button';
 
