@@ -1,0 +1,32 @@
+{
+  "name": "@lm-prototype-stencil/components-angular",
+  "version": "0.3.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "dependencies": {
+    "@lm-prototype-stencil/components": "workspace:*"
+  },
+  "peerDependencies": {
+    "@angular/core": ">=18.0.0",
+    "@angular/forms": ">=18.0.0",
+    "rxjs": ">=7.0.0"
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@angular/core": "^19.0.0",
+    "@angular/forms": "^19.0.0",
+    "rxjs": "^7.8.0",
+    "typescript": "^5.5.4"
+  }
+}

@@ -1,5 +1,13 @@
 # @lm-prototype-stencil/components-react
 
+## 0.2.2
+
+### Patch Changes
+
+- bd85079: new angular component
+- Updated dependencies [bd85079]
+  - @lm-prototype-stencil/components@0.3.1
+
 ## 0.2.1
 
 ### Patch Changes
