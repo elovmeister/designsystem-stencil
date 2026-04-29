@@ -4,12 +4,10 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, NgZo
 
 import { ProxyCmp } from './angular-component-lib/utils';
 
-import type { Components } from '@lm-prototype-stencil/components/dist/components';
+import { Components } from '@lm-prototype-stencil/components';
 
-import { defineCustomElement as defineLmPrototypeStencilButton } from '@lm-prototype-stencil/components/dist/components/lm-prototype-stencil-button.js';
-import { defineCustomElement as defineLmPrototypeStencilIcon } from '@lm-prototype-stencil/components/dist/components/lm-prototype-stencil-icon.js';
+
 @ProxyCmp({
-  defineCustomElementFn: defineLmPrototypeStencilButton,
   inputs: ['disabled', 'loading', 'size', 'type', 'variant']
 })
 @Component({
@@ -18,6 +16,7 @@ import { defineCustomElement as defineLmPrototypeStencilIcon } from '@lm-prototy
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['disabled', 'loading', 'size', 'type', 'variant'],
+  standalone: false
 })
 export class LmPrototypeStencilButton {
   protected el: HTMLLmPrototypeStencilButtonElement;
@@ -32,7 +31,6 @@ export declare interface LmPrototypeStencilButton extends Components.LmPrototype
 
 
 @ProxyCmp({
-  defineCustomElementFn: defineLmPrototypeStencilIcon,
   inputs: ['label', 'name']
 })
 @Component({
@@ -41,6 +39,7 @@ export declare interface LmPrototypeStencilButton extends Components.LmPrototype
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['label', { name: 'name', required: true }],
+  standalone: false
 })
 export class LmPrototypeStencilIcon {
   protected el: HTMLLmPrototypeStencilIconElement;

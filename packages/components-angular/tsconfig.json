@@ -3,6 +3,10 @@
   "compilerOptions": {
     "outDir": "dist",
     "rootDir": "src",
+    "paths": {
+      "@lm-prototype-stencil/components": ["../components/dist/types/index.d.ts"],
+      "@lm-prototype-stencil/components/dist": ["../components/dist/types/index.d.ts"]
+    },
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "target": "ES2022",

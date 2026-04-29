@@ -1,10 +1,10 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { LmPrototypeStencilButton, LmPrototypeStencilIcon } from '@lm-prototype-stencil/components-angular';
+import { LmPrototypeStencilComponentsModule} from '@lm-prototype-stencil/components-angular';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [LmPrototypeStencilButton, LmPrototypeStencilIcon],
+  imports: [LmPrototypeStencilComponentsModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

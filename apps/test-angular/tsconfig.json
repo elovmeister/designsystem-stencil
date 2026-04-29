@@ -22,7 +22,11 @@
     "lib": [
       "ES2022",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@lm-prototype-stencil/components-angular": ["../../packages/components-angular/src/index.ts"],
+      "@lm-prototype-stencil/components": ["../../packages/components/src/index.ts"]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
