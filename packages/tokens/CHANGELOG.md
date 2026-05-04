@@ -1,5 +1,11 @@
 # @lm-prototype-stencil/tokens
 
+## 0.5.0
+
+### Minor Changes
+
+- a70f57d: new version
+
 ## 0.4.0
 
 ### Minor Changes
