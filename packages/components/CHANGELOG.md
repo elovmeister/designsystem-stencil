@@ -1,5 +1,16 @@
 # @lm-prototype-stencil/components
 
+## 0.5.0
+
+### Minor Changes
+
+- adf24d8: new dropdown components
+
+### Patch Changes
+
+- Updated dependencies [adf24d8]
+  - @lm-prototype-stencil/tokens@0.4.0
+
 ## 0.4.0
 
 ### Minor Changes
