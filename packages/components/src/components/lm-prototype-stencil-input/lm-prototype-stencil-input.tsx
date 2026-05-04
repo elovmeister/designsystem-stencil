@@ -1,7 +1,9 @@
+/*
 import { Component, Prop, State, Event, EventEmitter, AttachInternals, Watch, Element, h, Host } from '@stencil/core';
 
 export type InputType = 'text' | 'email' | 'password' | 'number' | 'search' | 'tel' | 'url';
 export type InputSize = 'sm' | 'md' | 'lg';
+
 
 @Component({
     tag: 'lm-prototype-input',
@@ -137,3 +139,5 @@ export class LmPrototypeInput {
         );
     }
 }
+
+ */

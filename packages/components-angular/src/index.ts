@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { DIRECTIVES } from './components/stencil-generated/index';
 
 @NgModule({
-  declarations: [...DIRECTIVES],
+  imports: [...DIRECTIVES],
   exports: [...DIRECTIVES],
 })
 export class LmPrototypeStencilComponentsModule {}

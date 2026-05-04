@@ -1,13 +1,13 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { LmPrototypeStencilComponentsModule } from '@lm-prototype-stencil/components-angular';
+import { LmPrototypeStencilButton, LmPrototypeStencilIcon, LmPrototypeStencilDropdown, LmPrototypeStencilDropdownItem } from '@lm-prototype-stencil/components-angular';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, LmPrototypeStencilComponentsModule],
+  imports: [LmPrototypeStencilButton, LmPrototypeStencilIcon, LmPrototypeStencilDropdown, LmPrototypeStencilDropdownItem],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   template: `
+
     <div class="app">
       <header class="app-header">
         <h1>Design System with Stencil — Angular Test App</h1>
@@ -81,13 +81,13 @@ import { LmPrototypeStencilComponentsModule } from '@lm-prototype-stencil/compon
         <section class="demo-section">
           <h2 class="demo-title">Dropdown</h2>
           <lm-prototype-stencil-dropdown placeholder="Välj ett item">
-            <lm-prototype-stencil-dropdown-item>
+            <lm-prototype-stencil-dropdown-item value="item-1">
             item 1
             </lm-prototype-stencil-dropdown-item>
-            <lm-prototype-stencil-dropdown-item>
+            <lm-prototype-stencil-dropdown-item value="item-2">
               item 2
             </lm-prototype-stencil-dropdown-item>
-            <lm-prototype-stencil-dropdown-item>
+            <lm-prototype-stencil-dropdown-item value="item-3">
               item 3
             </lm-prototype-stencil-dropdown-item>
           </lm-prototype-stencil-dropdown>
@@ -117,7 +117,7 @@ import { LmPrototypeStencilComponentsModule } from '@lm-prototype-stencil/compon
 export class AppComponent {
   darkMode = false;
   loading = false;
-  hasDropdown = false; // Sätt till true om du har skapat dropdown-komponenten
+  hasDropdown = false;
 
   toggleTheme(): void {
     this.darkMode = !this.darkMode;
@@ -136,3 +136,4 @@ export class AppComponent {
     alert('hejsan');
   }
 }
+

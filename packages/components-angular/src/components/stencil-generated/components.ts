@@ -4,10 +4,14 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, Even
 
 import { ProxyCmp } from './angular-component-lib/utils';
 
-import { Components } from '@lm-prototype-stencil/components';
+import type { Components } from '@lm-prototype-stencil/components/components';
 
-
+import { defineCustomElement as defineLmPrototypeStencilButton } from '@lm-prototype-stencil/components/components/lm-prototype-stencil-button.js';
+import { defineCustomElement as defineLmPrototypeStencilDropdown } from '@lm-prototype-stencil/components/components/lm-prototype-stencil-dropdown.js';
+import { defineCustomElement as defineLmPrototypeStencilDropdownItem } from '@lm-prototype-stencil/components/components/lm-prototype-stencil-dropdown-item.js';
+import { defineCustomElement as defineLmPrototypeStencilIcon } from '@lm-prototype-stencil/components/components/lm-prototype-stencil-icon.js';
 @ProxyCmp({
+  defineCustomElementFn: defineLmPrototypeStencilButton,
   inputs: ['disabled', 'loading', 'size', 'type', 'variant']
 })
 @Component({
@@ -16,7 +20,6 @@ import { Components } from '@lm-prototype-stencil/components';
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['disabled', 'loading', 'size', 'type', 'variant'],
-  standalone: false
 })
 export class LmPrototypeStencilButton {
   protected el: HTMLLmPrototypeStencilButtonElement;
@@ -31,6 +34,7 @@ export declare interface LmPrototypeStencilButton extends Components.LmPrototype
 
 
 @ProxyCmp({
+  defineCustomElementFn: defineLmPrototypeStencilDropdown,
   inputs: ['disabled', 'icon', 'iconEnd', 'label', 'name', 'open', 'placeholder', 'required', 'size', 'value', 'variant']
 })
 @Component({
@@ -40,7 +44,6 @@ export declare interface LmPrototypeStencilButton extends Components.LmPrototype
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['disabled', 'icon', 'iconEnd', 'label', 'name', 'open', 'placeholder', 'required', 'size', 'value', 'variant'],
   outputs: ['lmChange'],
-  standalone: false
 })
 export class LmPrototypeStencilDropdown {
   protected el: HTMLLmPrototypeStencilDropdownElement;
@@ -59,6 +62,7 @@ export declare interface LmPrototypeStencilDropdown extends Components.LmPrototy
 
 
 @ProxyCmp({
+  defineCustomElementFn: defineLmPrototypeStencilDropdownItem,
   inputs: ['icon', 'iconEnd', 'value']
 })
 @Component({
@@ -68,7 +72,6 @@ export declare interface LmPrototypeStencilDropdown extends Components.LmPrototy
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['icon', 'iconEnd', 'value'],
   outputs: ['lm-dropdown-item-select'],
-  standalone: false
 })
 export class LmPrototypeStencilDropdownItem {
   protected el: HTMLLmPrototypeStencilDropdownItemElement;
@@ -87,6 +90,7 @@ export declare interface LmPrototypeStencilDropdownItem extends Components.LmPro
 
 
 @ProxyCmp({
+  defineCustomElementFn: defineLmPrototypeStencilIcon,
   inputs: ['label', 'name']
 })
 @Component({
@@ -95,7 +99,6 @@ export declare interface LmPrototypeStencilDropdownItem extends Components.LmPro
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['label', { name: 'name', required: true }],
-  standalone: false
 })
 export class LmPrototypeStencilIcon {
   protected el: HTMLLmPrototypeStencilIconElement;
