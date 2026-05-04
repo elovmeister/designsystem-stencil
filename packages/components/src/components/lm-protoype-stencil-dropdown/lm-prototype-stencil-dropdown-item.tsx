@@ -1,5 +1,7 @@
 import { Component, Host, h, Prop, Event, EventEmitter } from '@stencil/core';
 
+export type IconName = "check" | "arrow-right" | "chevron-down" | "loader" | "x";
+
 @Component({
     tag: 'lm-prototype-stencil-dropdown-item',
     styleUrl: 'lm-prototype-stencil-dropdown-item.css',
@@ -7,8 +9,9 @@ import { Component, Host, h, Prop, Event, EventEmitter } from '@stencil/core';
 })
 export class LmPrototypeStencilDropdownItem {
     @Prop() value = '';
-    @Prop() icon?: string;
-    @Prop() iconEnd?: string;
+
+    @Prop() icon?: IconName;
+    @Prop() iconEnd?: IconName;
 
     @Event({ eventName: 'lm-dropdown-item-select', bubbles: true, composed: true })
     itemSelect: EventEmitter<void>;
@@ -21,7 +24,7 @@ export class LmPrototypeStencilDropdownItem {
         return (
             <Host>
                 <slot name="start">
-                    {this.icon && <lm-prototype-stencil-icon name={this.icon}></lm-prototype-stencil-icon>}
+                    {this.icon && <lm-prototype-stencil-icon name={this.icon as any}></lm-prototype-stencil-icon>}
                 </slot>
 
                 <div class="item" role="option" onClick={this.handleSelect}>
@@ -29,7 +32,7 @@ export class LmPrototypeStencilDropdownItem {
                 </div>
 
                 <slot name="end">
-                    {this.iconEnd && <lm-prototype-stencil-icon name={this.iconEnd}></lm-prototype-stencil-icon>}
+                    {this.iconEnd && <lm-prototype-stencil-icon name={this.iconEnd as any}></lm-prototype-stencil-icon>}
                 </slot>
             </Host>
         );

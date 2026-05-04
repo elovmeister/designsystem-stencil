@@ -78,20 +78,22 @@ import { LmPrototypeStencilComponentsModule } from '@lm-prototype-stencil/compon
           </form>
         </section>
 
-        <section class="demo-section" *ngIf="hasDropdown">
+        <section class="demo-section">
           <h2 class="demo-title">Dropdown</h2>
-          <div style="min-height: 250px;">
-            <lm-prototype-stencil-dropdown variant="primary" size="lg">
-              <span slot="label">Options</span>
-              <div class="dropdown-content">
-                <a href="#">Account settings</a>
-                <a href="#">Support</a>
-                <hr>
-                <a href="#" class="danger">Sign out</a>
-              </div>
-            </lm-prototype-stencil-dropdown>
-          </div>
+          <lm-prototype-stencil-dropdown placeholder="Välj ett item">
+            <lm-prototype-stencil-dropdown-item>
+            item 1
+            </lm-prototype-stencil-dropdown-item>
+            <lm-prototype-stencil-dropdown-item>
+              item 2
+            </lm-prototype-stencil-dropdown-item>
+            <lm-prototype-stencil-dropdown-item>
+              item 3
+            </lm-prototype-stencil-dropdown-item>
+          </lm-prototype-stencil-dropdown>
         </section>
+
+
       </main>
     </div>
   `,

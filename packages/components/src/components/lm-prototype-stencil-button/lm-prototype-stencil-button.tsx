@@ -6,20 +6,14 @@ import { Component, Prop, h, Host } from '@stencil/core';
     shadow: true,
 })
 export class LmPrototypeStencilButton {
-    /** Visual variant */
     @Prop({ reflect: true }) variant: 'primary' | 'secondary' | 'tertiary' | 'danger' = 'primary';
 
-    /** Size variant */
     @Prop({ reflect: true }) size: 'sm' | 'md' | 'lg' = 'md';
 
-
-    /** Standard button type */
     @Prop() type: 'button' | 'submit' | 'reset' = 'button';
 
-    /** Disables the button */
     @Prop({ reflect: true }) disabled = false;
 
-    /** Shows a loading state */
     @Prop({ reflect: true }) loading = false;
 
     render() {

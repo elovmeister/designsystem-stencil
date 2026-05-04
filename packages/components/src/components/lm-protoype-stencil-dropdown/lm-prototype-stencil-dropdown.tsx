@@ -13,6 +13,7 @@ import {
 
 export type DropdownVariant = 'primary' | 'secondary' | 'tertiary';
 export type DropdownSize = 'sm' | 'md' | 'lg';
+export type IconName = "check" | "arrow-right" | "chevron-down" | "loader" | "x";
 
 @Component({
     tag: 'lm-prototype-stencil-dropdown',
@@ -31,10 +32,12 @@ export class LmPrototypeStencilDropdown {
     @Prop({ reflect: true }) required = false;
 
     @Prop({ mutable: true, reflect: true }) value = '';
-    @Prop() icon?: string;
     @Prop() label?: string;
     @Prop() placeholder = 'Välj alternativ...';
     @Prop() name?: string;
+
+    @Prop() icon?: IconName;
+    @Prop() iconEnd?: IconName;
 
     @State() selectedLabel = '';
 
@@ -88,7 +91,7 @@ export class LmPrototypeStencilDropdown {
                     >
                         <slot name="start">
                             {this.icon && (
-                                <lm-prototype-stencil-icon name={this.icon} style={{ marginRight: '8px' }}></lm-prototype-stencil-icon>
+                                <lm-prototype-stencil-icon name={this.icon as any} style={{ marginRight: '8px' }}></lm-prototype-stencil-icon>
                             )}
                         </slot>
                         <span class="trigger__text">{displayLabel}</span>

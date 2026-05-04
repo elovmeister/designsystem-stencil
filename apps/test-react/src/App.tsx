@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { LmPrototypeStencilButton, LmPrototypeStencilIcon,} from "@lm-prototype-stencil/components-react";
+import { LmPrototypeStencilButton, LmPrototypeStencilIcon, LmPrototypeStencilDropdown, LmPrototypeStencilDropdownItem} from "@lm-prototype-stencil/components-react";
 
 import "@lm-prototype-stencil/tokens/dist/themes/light.css";
 import "@lm-prototype-stencil/tokens/dist/themes/dark.css";
@@ -123,6 +123,20 @@ export default function App() {
                     />
                     <LmPrototypeStencilButton type="submit">Submit</LmPrototypeStencilButton>
                 </form>
+            </Section>
+
+            <Section title="Dropdown">
+                <LmPrototypeStencilDropdown name="dropdown" label="Dropdown med items" placeholder="Välj ett itme">
+                    <LmPrototypeStencilDropdownItem>
+                        Item 1
+                    </LmPrototypeStencilDropdownItem>
+                    <LmPrototypeStencilDropdownItem>
+                        Item 2
+                    </LmPrototypeStencilDropdownItem>
+                    <LmPrototypeStencilDropdownItem>
+                        Item 3
+                    </LmPrototypeStencilDropdownItem>
+                </LmPrototypeStencilDropdown>
             </Section>
         </div>
     );

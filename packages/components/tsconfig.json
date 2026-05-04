@@ -6,7 +6,8 @@
     "jsxFragmentFactory": "Fragment",
     "experimentalDecorators": true,
     "outDir": "dist",
-    "rootDir": "src"
+    "rootDir": "src",
+    "strictPropertyInitialization": false
   },
   "include": [
     "src",
