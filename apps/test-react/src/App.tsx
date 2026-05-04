@@ -13,7 +13,7 @@ const Section = ({ title, children }: { title: string; children: React.ReactNode
             textTransform: "uppercase",
             letterSpacing: "0.05em",
             marginBottom: 12,
-            color: "var(--lm-prototype-color-text-secondary)",
+            color: "var(--lm-prototype-stencil-color-text-secondary)",
         }}
         >
             {title}
@@ -43,8 +43,8 @@ export default function App() {
         <div style={{
             padding: 40,
             minHeight: "100vh",
-            background: "var(--lm-prototype-color-surface-default)",
-            color: "var(--lm-prototype-color-text-primary)",
+            background: "var(--lm-prototype-stencil-color-surface-default)",
+            color: "var(--lm-prototype-stencil-color-text-primary)",
             fontFamily: "system-ui, sans-serif",
         }}
         >
@@ -53,7 +53,7 @@ export default function App() {
                 justifyContent: "space-between",
                 alignItems: "center",
                 marginBottom: 40,
-                borderBottom: "1px solid var(--lm-prototype-color-border-default)",
+                borderBottom: "1px solid var(--lm-prototype-stencil-color-border-default)",
                 paddingBottom: 20,
             }}
             >
@@ -114,10 +114,10 @@ export default function App() {
                         placeholder="Type something…"
                         style={{
                             padding: "8px 12px",
-                            border: "1px solid var(--lm-prototype-color-border-default)",
-                            borderRadius: "var(--lm-prototype-radius-md)",
-                            background: "var(--lm-prototype-color-surface-raised)",
-                            color: "var(--lm-prototype-color-text-primary)",
+                            border: "1px solid var(--lm-prototype-stencil-color-border-default)",
+                            borderRadius: "var(--lm-prototype-stencil-radius-md)",
+                            background: "var(--lm-prototype-stencil-color-surface-raised)",
+                            color: "var(--lm-prototype-stencil-color-text-primary)",
                             fontSize: "14px",
                         }}
                     />
