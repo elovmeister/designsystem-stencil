@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@lm-prototype-stencil/components": "workspace:*",
+    "@lm-prototype-stencil/icons": "workspace:*",
     "@stencil/react-output-target": "^1.5.1"
   },
   "peerDependencies": {

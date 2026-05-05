@@ -15,6 +15,13 @@
         "../components-react/src/components/stencil-generated/**"
       ]
     },
+    "@lm-prototype-stencil/icons#build": {
+      "dependsOn": ["^build"],
+      "outputs": [
+        "dist/**",
+        "../components-react/src/components/stencil-generated/**"
+      ]
+    },
     "dev": {
       "cache": false,
       "persistent": true

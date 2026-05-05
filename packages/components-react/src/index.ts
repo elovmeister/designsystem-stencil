@@ -1,2 +1,2 @@
 export * from './components/stencil-generated/components';
-export * from './components/stencil-generated/icons';
+export * from './components/stencil-generated/icons/components';

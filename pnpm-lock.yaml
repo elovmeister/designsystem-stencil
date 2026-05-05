@@ -228,6 +228,9 @@ importers:
       '@lm-prototype-stencil/components':
         specifier: workspace:*
         version: link:../components
+      '@lm-prototype-stencil/icons':
+        specifier: workspace:*
+        version: link:../icons
       '@stencil/react-output-target':
         specifier: ^1.5.1
         version: 1.5.1(@stencil/core@4.43.4)(@types/react@18.3.28)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
