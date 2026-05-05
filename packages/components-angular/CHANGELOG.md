@@ -1,5 +1,16 @@
 # @lm-prototype-stencil/components-angular
 
+## 0.5.0
+
+### Minor Changes
+
+- 803e28c: updated components
+
+### Patch Changes
+
+- Updated dependencies [803e28c]
+  - @lm-prototype-stencil/components@0.5.0
+
 ## 0.6.0
 
 ### Minor Changes
