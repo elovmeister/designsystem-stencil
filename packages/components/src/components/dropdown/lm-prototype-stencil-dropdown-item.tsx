@@ -1,6 +1,12 @@
-import { Component, Host, h, Prop, Event, EventEmitter } from '@stencil/core';
-
-export type IconName = "check" | "arrow-right" | "chevron-down" | "loader" | "x";
+import {
+    Component,
+    Prop,
+    Event,
+    EventEmitter,
+    h,
+    Host
+} from '@stencil/core';
+import type { IconName } from '@lm-prototype-stencil/icons';
 
 @Component({
     tag: 'lm-prototype-stencil-dropdown-item',
@@ -9,31 +15,38 @@ export type IconName = "check" | "arrow-right" | "chevron-down" | "loader" | "x"
 })
 export class LmPrototypeStencilDropdownItem {
     @Prop() value = '';
-
     @Prop() icon?: IconName;
-    @Prop() iconEnd?: IconName;
+    @Prop({ attribute: 'icon-end' }) iconEnd?: IconName;
 
     @Event({ eventName: 'lm-dropdown-item-select', bubbles: true, composed: true })
-    itemSelect: EventEmitter<void>;
+    lmDropdownItemSelect!: EventEmitter<void>;
 
-    handleSelect = () => {
-        this.itemSelect.emit();
+    private handleSelect = () => {
+        this.lmDropdownItemSelect.emit();
     };
 
     render() {
         return (
             <Host>
-                <slot name="start">
-                    {this.icon && <lm-prototype-stencil-icon name={this.icon as any}></lm-prototype-stencil-icon>}
-                </slot>
-
                 <div class="item" role="option" onClick={this.handleSelect}>
-                    <slot></slot>
-                </div>
 
-                <slot name="end">
-                    {this.iconEnd && <lm-prototype-stencil-icon name={this.iconEnd as any}></lm-prototype-stencil-icon>}
-                </slot>
+                    <span class="item__icon">
+                        <slot name="start">
+                            {this.icon && <lm-prototype-stencil-icon name={this.icon} />}
+                        </slot>
+                    </span>
+
+                    <span class="item__text">
+                        <slot></slot>
+                    </span>
+
+                    <span class="item__icon">
+                        <slot name="end">
+                            {this.iconEnd && <lm-prototype-stencil-icon name={this.iconEnd} />}
+                        </slot>
+                    </span>
+
+                </div>
             </Host>
         );
     }

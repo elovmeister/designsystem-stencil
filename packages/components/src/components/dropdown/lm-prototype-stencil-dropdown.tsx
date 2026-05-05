@@ -1,19 +1,19 @@
 import {
     Component,
-    Host,
-    h,
     Prop,
     State,
     Element,
+    Event,
+    EventEmitter,
     Listen,
     AttachInternals,
-    Event,
-    EventEmitter
+    h,
+    Host
 } from '@stencil/core';
+import type { IconName } from '@lm-prototype-stencil/icons';
 
 export type DropdownVariant = 'primary' | 'secondary' | 'tertiary';
 export type DropdownSize = 'sm' | 'md' | 'lg';
-export type IconName = "check" | "arrow-right" | "chevron-down" | "loader" | "x";
 
 @Component({
     tag: 'lm-prototype-stencil-dropdown',
@@ -22,39 +22,41 @@ export type IconName = "check" | "arrow-right" | "chevron-down" | "loader" | "x"
     formAssociated: true
 })
 export class LmPrototypeStencilDropdown {
-    @Element() el: HTMLElement;
-    @AttachInternals() internals: ElementInternals;
+    @Element() el!: HTMLElement;
+    @AttachInternals() internals!: ElementInternals;
 
     @Prop({ mutable: true, reflect: true }) open = false;
+    @Prop({ mutable: true, reflect: true }) value = '';
+
     @Prop({ reflect: true }) variant: DropdownVariant = 'secondary';
     @Prop({ reflect: true }) size: DropdownSize = 'md';
     @Prop({ reflect: true }) disabled = false;
     @Prop({ reflect: true }) required = false;
 
-    @Prop({ mutable: true, reflect: true }) value = '';
+    @Prop() icon?: IconName;
     @Prop() label?: string;
     @Prop() placeholder = 'Välj alternativ...';
     @Prop() name?: string;
 
-    @Prop() icon?: IconName;
-    @Prop() iconEnd?: IconName;
-
     @State() selectedLabel = '';
 
-    @Event({ eventName: 'lmChange' }) lmChange: EventEmitter<{ value: string; label: string }>;
+    @Event({ eventName: 'change', bubbles: true, composed: true })
+    lmChange!: EventEmitter<{ value: string; label: string }>;
 
     @Listen('click', { target: 'document' })
     handleDocumentClick(e: MouseEvent) {
         if (!this.open) return;
-        if (!e.composedPath().includes(this.el)) {
+
+        const target = e.target as HTMLElement;
+        if (!this.el.contains(target)) {
             this.open = false;
         }
     }
 
     @Listen('lm-dropdown-item-select')
     handleItemSelect(e: CustomEvent) {
-        const item = e.target as HTMLElement & { value: string };
-        this.value = item.value;
+        const item = e.target as HTMLElement & { value?: string, textContent?: string | null };
+        this.value = item.value || '';
         this.selectedLabel = item.textContent?.trim() || '';
         this.open = false;
 
@@ -63,7 +65,7 @@ export class LmPrototypeStencilDropdown {
         this.lmChange.emit({ value: this.value, label: this.selectedLabel });
     }
 
-    toggleDropdown = () => {
+    private toggleDropdown = () => {
         if (this.disabled) return;
         this.open = !this.open;
     };
@@ -85,19 +87,26 @@ export class LmPrototypeStencilDropdown {
                         disabled={this.disabled}
                         aria-haspopup="listbox"
                         aria-expanded={this.open ? 'true' : 'false'}
-                        aria-label={fwdAriaLabel}
-                        aria-invalid={fwdAriaInvalid}
+                        aria-label={fwdAriaLabel || undefined}
+                        aria-invalid={fwdAriaInvalid || undefined}
                         onClick={this.toggleDropdown}
                     >
-                        <slot name="start">
-                            {this.icon && (
-                                <lm-prototype-stencil-icon name={this.icon as any} style={{ marginRight: '8px' }}></lm-prototype-stencil-icon>
-                            )}
-                        </slot>
+                        <span class="trigger__icon">
+                            <slot name="start">
+                                {this.icon && (
+                                    <lm-prototype-stencil-icon
+                                        name={this.icon}
+                                        style={{ marginRight: '8px' }}
+                                    />
+                                )}
+                            </slot>
+                        </span>
+
                         <span class="trigger__text">{displayLabel}</span>
+
                         <span class="trigger__icon trigger__icon--chevron">
-              <lm-prototype-stencil-icon name="chevron-down"></lm-prototype-stencil-icon>
-            </span>
+                            <lm-prototype-stencil-icon name="chevron-down"></lm-prototype-stencil-icon>
+                        </span>
                     </button>
 
                     <div class="panel" part="panel" role="listbox" aria-hidden={this.open ? 'false' : 'true'}>

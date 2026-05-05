@@ -3,31 +3,31 @@
     position: relative;
     width: 100%;
 
-    --_bg: var(--lm-prototype-stencil-button-background, transparent);
-    --_color: var(--lm-prototype-stencil-color-text-primary, #111827);
-    --_border-color: var(--lm-prototype-stencil-color-border-default, #e5e7eb);
-    --_radius: var(--lm-prototype-stencil-button-radius, var(--lm-prototype-stencil-radius-md, 6px));
-    --_px: var(--lm-prototype-stencil-space-4, 16px);
-    --_py: var(--lm-prototype-stencil-space-2, 8px);
-    --_fs: var(--lm-prototype-stencil-font-size-md, 16px);
-    --_dur: var(--lm-prototype-stencil-duration-normal, 200ms);
+    --_bg: var(--lm-prototype-button-background, transparent);
+    --_color: var(--lm-prototype-color-text-primary, #111827);
+    --_border-color: var(--lm-prototype-color-border-default, #e5e7eb);
+    --_radius: var(--lm-prototype-button-radius, var(--lm-prototype-radius-md, 6px));
+    --_px: var(--lm-prototype-space-4, 16px);
+    --_py: var(--lm-prototype-space-2, 8px);
+    --_fs: var(--lm-prototype-font-size-md, 16px);
+    --_dur: var(--lm-prototype-duration-normal, 200ms);
 
-    --_panel-bg: var(--lm-prototype-stencil-color-surface-raised, #ffffff);
-    --_panel-shadow: var(--lm-prototype-stencil-shadow-md, 0 4px 6px -1px rgb(0 0 0 / 0.1));
-    --_panel-radius: var(--lm-prototype-stencil-radius-md, 6px);
-    --_panel-border: var(--lm-prototype-stencil-color-border-default, #e5e7eb);
+    --_panel-bg: var(--lm-prototype-color-surface-raised, #ffffff);
+    --_panel-shadow: var(--lm-prototype-shadow-md, 0 4px 6px -1px rgb(0 0 0 / 0.1));
+    --_panel-radius: var(--lm-prototype-radius-md, 6px);
+    --_panel-border: var(--lm-prototype-color-border-default, #e5e7eb);
 }
 
 :host([variant='primary']) {
-    --_bg: var(--lm-prototype-stencil-color-action-primary, #d1d5db);
-    --_color: var(--lm-prototype-stencil-color-text-inverse, #ffffff);
+    --_bg: var(--lm-prototype-color-action-primary, #d1d5db);
+    --_color: var(--lm-prototype-color-text-inverse, #ffffff);
     --_border-color: transparent;
 }
 
 :host([size='sm']) {
-    --_px: var(--lm-prototype-stencil-space-3, 12px);
-    --_py: var(--lm-prototype-stencil-space-1, 4px);
-    --_fs: var(--lm-prototype-stencil-font-size-sm, 14px);
+    --_px: var(--lm-prototype-space-3, 12px);
+    --_py: var(--lm-prototype-space-1, 4px);
+    --_fs: var(--lm-prototype-font-size-sm, 14px);
 }
 
 :host([disabled]) {
@@ -39,14 +39,14 @@
 .dropdown {
     display: flex;
     flex-direction: column;
-    gap: var(--lm-prototype-stencil-space-1, 4px);
+    gap: var(--lm-prototype-space-1, 4px);
 }
 
 .label {
-    font-family: var(--lm-prototype-stencil-font-family-sans, inherit);
-    font-size: var(--lm-prototype-stencil-font-size-sm, 14px);
-    font-weight: var(--lm-prototype-stencil-font-weight-medium, 500);
-    color: var(--lm-prototype-stencil-color-text-secondary, #4a4a4a);
+    font-family: var(--lm-prototype-font-family-sans, inherit);
+    font-size: var(--lm-prototype-font-size-sm, 14px);
+    font-weight: var(--lm-prototype-font-weight-medium, 500);
+    color: var(--lm-prototype-color-text-secondary, #4a4a4a);
 }
 
 .trigger {
@@ -60,7 +60,7 @@
     border: 1px solid var(--_border-color);
     border-radius: var(--_radius);
     font-size: var(--_fs);
-    font-family: var(--lm-prototype-stencil-font-family-sans, inherit);
+    font-family: var(--lm-prototype-font-family-sans, inherit);
     cursor: pointer;
     width: 100%;
     transition: all var(--_dur) ease;
@@ -68,12 +68,12 @@
 }
 
 .trigger:hover:not(:disabled) {
-    background: var(--lm-prototype-stencil-color-surface-subtle, #f3f4f6);
-    border-color: var(--lm-prototype-stencil-color-border-hover, #999);
+    background: var(--lm-prototype-color-surface-subtle, #f3f4f6);
+    border-color: var(--lm-prototype-color-border-hover, #999);
 }
 
 :host([open]) .trigger {
-    border-color: var(--lm-prototype-stencil-color-action-primary, #005A9C);
+    border-color: var(--lm-prototype-color-action-primary, #005A9C);
     box-shadow: 0 0 0 2px rgba(0, 90, 156, 0.2);
 }
 
@@ -114,5 +114,5 @@
 .panel__content {
     max-height: 250px;
     overflow-y: auto;
-    padding: var(--lm-prototype-stencil-space-1, 4px) 0;
+    padding: var(--lm-prototype-space-1, 4px) 0;
 }

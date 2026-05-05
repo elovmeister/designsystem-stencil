@@ -5,20 +5,25 @@
 .item {
     display: flex;
     align-items: center;
-    padding: var(--lm-prototype-stencil-space-2, 8px) var(--lm-prototype-stencil-space-4, 16px);
-    font-family: var(--lm-prototype-stencil-font-family-sans, inherit);
-    font-size: var(--lm-prototype-stencil-font-size-md, 16px);
-    color: var(--lm-prototype-stencil-color-text-primary, #111827);
+    gap: var(--lm-prototype-space-2, 8px); /* Avstånd mellan ikon och text */
+    padding: var(--lm-prototype-space-2, 8px) var(--lm-prototype-space-4, 16px);
+    font-family: var(--lm-prototype-font-family-sans, inherit);
+    font-size: var(--lm-prototype-font-size-md, 16px);
+    color: var(--lm-prototype-color-text-primary, #111827);
     cursor: pointer;
     transition: background 0.1s ease;
 }
 
 .item:hover {
-    background: var(--lm-prototype-stencil-color-surface-subtle, #f3f4f6);
+    background: var(--lm-prototype-color-surface-subtle, #f3f4f6);
 }
 
-/* Anpassning för eventuella ikoner i slots */
-::slotted([slot="start"]),
-::slotted([slot="end"]) {
+.item__icon {
     display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.item__text {
+    flex-grow: 1; /* Detta gör att en eventuell slut-ikon knuffas längst ut till höger */
 }
