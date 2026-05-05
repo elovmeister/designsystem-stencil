@@ -4,7 +4,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, NgZo
 
 import { ProxyCmp } from './angular-component-lib/utils';
 
-import type { Components } from '@lm-prototype-stencil/icons/dist/components';
+import type { Components } from '@lm-prototype-stencil/icons/dist/types/components';
 
 import { defineCustomElement as defineLmPrototypeStencilIcon } from '@lm-prototype-stencil/icons/dist/components/lm-prototype-stencil-icon.js';
 @ProxyCmp({

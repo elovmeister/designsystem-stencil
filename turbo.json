@@ -19,7 +19,8 @@
       "dependsOn": ["^build"],
       "outputs": [
         "dist/**",
-        "../components-react/src/components/stencil-generated/**"
+        "../components-react/src/components/stencil-generated/**",
+        "../components-angular/src/components/stencil-generated/**"
       ]
     },
     "dev": {
