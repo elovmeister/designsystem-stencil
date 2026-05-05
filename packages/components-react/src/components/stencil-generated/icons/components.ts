@@ -11,7 +11,7 @@ import type { StencilReactComponent } from '@stencil/react-output-target/runtime
 import { createComponent } from '@stencil/react-output-target/runtime';
 import React from 'react';
 
-import type { JSX } from "@lm-prototype-stencil/icons/dist/types/components";
+import type { JSX } from "@lm-prototype-stencil/icons/dist/components";
 import { LmPrototypeStencilIcon as LmPrototypeStencilIconElement, defineCustomElement as defineLmPrototypeStencilIcon } from "@lm-prototype-stencil/icons/dist/components/lm-prototype-stencil-icon.js";
 
 export type LmPrototypeStencilIconEvents = NonNullable<unknown>;
