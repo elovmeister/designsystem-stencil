@@ -1,5 +1,15 @@
 # @lm-prototype-stencil/test-angular
 
+## 0.0.8
+
+### Patch Changes
+
+- Updated dependencies [803e28c]
+  - @lm-prototype-stencil/components@0.5.0
+  - @lm-prototype-stencil/components-angular@0.5.0
+  - @lm-prototype-stencil/icons@0.4.0
+  - @lm-prototype-stencil/tokens@0.6.0
+
 ## 0.0.7
 
 ### Patch Changes
