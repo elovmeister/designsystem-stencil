@@ -21,19 +21,6 @@
 | `lm-dropdown-item-select` |             | `CustomEvent<void>` |
 
 
-## Dependencies
-
-### Depends on
-
-- [lm-prototype-stencil-icon](../../../../icons)
-
-### Graph
-```mermaid
-graph TD;
-  lm-prototype-stencil-dropdown-item --> lm-prototype-stencil-icon
-  style lm-prototype-stencil-dropdown-item fill:#f9f,stroke:#333,stroke-width:4px
-```
-
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

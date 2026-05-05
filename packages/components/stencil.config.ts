@@ -21,11 +21,12 @@ export const config: Config = {
         },
         reactOutputTarget({
             outDir: '../components-react/src/components/stencil-generated/',
-            
+
         }),
         angularOutputTarget({
             componentCorePackage: '@lm-prototype-stencil/components',
             outputType: 'standalone',
+            customElementsDir:'dist/components',
             directivesProxyFile: '../components-angular/src/components/stencil-generated/components.ts',
             directivesArrayFile: '../components-angular/src/components/stencil-generated/index.ts',
         }),

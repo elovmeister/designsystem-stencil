@@ -9,6 +9,7 @@
   "dependencies": {
     "@lm-prototype-stencil/components-react": "workspace:*",
     "@lm-prototype-stencil/tokens": "workspace:*",
+    "@lm-prototype-stencil/icons": "workspace:*",
     "react": "^18.3.0",
     "react-dom": "^18.3.0"
   },

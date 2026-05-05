@@ -1,5 +1,3 @@
-/* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */
-/* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
 {
   "compileOnSave": false,
   "compilerOptions": {
@@ -19,13 +17,13 @@
     "importHelpers": true,
     "target": "ES2022",
     "module": "ES2022",
-    "lib": [
-      "ES2022",
-      "dom"
-    ],
+    "lib": ["ES2022", "dom"],
     "paths": {
       "@lm-prototype-stencil/components-angular": ["../../packages/components-angular/src/index.ts"],
-      "@lm-prototype-stencil/components": ["../../packages/components/src/index.ts"]
+      "@lm-prototype-stencil/components": ["../../packages/components/src/index.ts"],
+      "@lm-prototype-stencil/icons/dist/types/components": ["../../packages/icons/dist/types/components.d.ts"],
+      "@lm-prototype-stencil/icons/dist/components/*": ["../../packages/icons/dist/components/*"],
+      "@lm-prototype-stencil/icons/lm-prototype-stencil-icon": ["../../packages/icons/dist/components/lm-prototype-stencil-icon.d.ts"]
     }
   },
   "angularCompilerOptions": {
