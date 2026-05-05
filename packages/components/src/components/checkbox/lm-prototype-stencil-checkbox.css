@@ -1,0 +1,88 @@
+:host {
+    display: inline-block;
+
+    --_size: var(--lm-prototype-checkbox-size, 20px);
+    --_border-color: var(--lm-prototype-checkbox-border, var(--lm-prototype-color-border-default, #6b7280));
+    --_border-hover: var(--lm-prototype-checkbox-border-hover, var(--lm-prototype-color-action-primary, #005A9C));
+    --_bg: var(--lm-prototype-checkbox-bg, var(--lm-prototype-color-surface-default, #ffffff));
+    --_bg-checked: var(--lm-prototype-checkbox-bg-checked, var(--lm-prototype-color-action-primary, #005A9C));
+    --_color-checked: var(--lm-prototype-checkbox-color-checked, var(--lm-prototype-color-text-inverse, #ffffff));
+    --_radius: var(--lm-prototype-checkbox-radius, var(--lm-prototype-radius-sm, 4px));
+    --_dur: var(--lm-prototype-duration-fast, 150ms);
+}
+
+:host([disabled]) {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.checkbox {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: var(--lm-prototype-space-2, 8px);
+    cursor: pointer;
+    position: relative;
+}
+
+.checkbox__input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.checkbox__control {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--_size);
+    height: var(--_size);
+    flex-shrink: 0;
+    background: var(--_bg);
+    border: 2px solid var(--_border-color);
+    border-radius: var(--_radius);
+    transition: all var(--_dur) ease;
+    box-sizing: border-box;
+    margin-top: 2px;
+}
+
+.checkbox:hover .checkbox__control {
+    border-color: var(--_border-hover);
+}
+
+.checkbox__input:focus-visible + .checkbox__control {
+    outline: 2px solid var(--lm-prototype-color-border-focus, rgba(0, 90, 156, 0.4));
+    outline-offset: 2px;
+    border-color: var(--_border-hover);
+}
+
+.checkbox__input:checked + .checkbox__control {
+    background: var(--_bg-checked);
+    border-color: var(--_bg-checked);
+    color: var(--_color-checked);
+}
+
+.checkbox__icon {
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all var(--_dur) ease;
+    display: flex;
+}
+
+.checkbox__input:checked + .checkbox__control .checkbox__icon {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.checkbox__label {
+    font-family: var(--lm-prototype-font-family-sans, inherit);
+    font-size: var(--lm-prototype-font-size-md, 16px);
+    color: var(--lm-prototype-color-text-primary, #111827);
+    user-select: none;
+    line-height: 1.5;
+}
