@@ -7,12 +7,12 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { ButtonSize, ButtonType, ButtonVariant } from "./components/button/lm-prototype-stencil-button";
 import { IconName } from "@lm-prototype-stencil/icons";
-import { DropdownSize, DropdownVariant, IconName as IconName1 } from "./components/dropdown/lm-prototype-stencil-dropdown";
-import { IconName as IconName2 } from "./components/dropdown/lm-prototype-stencil-dropdown-item";
+import { DropdownSize, DropdownVariant } from "./components/dropdown/lm-prototype-stencil-dropdown";
+import { InputSize, InputType } from "./components/input/lm-prototype-stencil-input";
 export { ButtonSize, ButtonType, ButtonVariant } from "./components/button/lm-prototype-stencil-button";
 export { IconName } from "@lm-prototype-stencil/icons";
-export { DropdownSize, DropdownVariant, IconName as IconName1 } from "./components/dropdown/lm-prototype-stencil-dropdown";
-export { IconName as IconName2 } from "./components/dropdown/lm-prototype-stencil-dropdown-item";
+export { DropdownSize, DropdownVariant } from "./components/dropdown/lm-prototype-stencil-dropdown";
+export { InputSize, InputType } from "./components/input/lm-prototype-stencil-input";
 export namespace Components {
     interface LmPrototypeStencilButton {
         /**
@@ -40,13 +40,32 @@ export namespace Components {
          */
         "variant": ButtonVariant;
     }
+    interface LmPrototypeStencilCheckbox {
+        /**
+          * @default false
+         */
+        "checked": boolean;
+        /**
+          * @default false
+         */
+        "disabled": boolean;
+        "label"?: string;
+        "name"?: string;
+        /**
+          * @default false
+         */
+        "required": boolean;
+        /**
+          * @default 'on'
+         */
+        "value": string;
+    }
     interface LmPrototypeStencilDropdown {
         /**
           * @default false
          */
         "disabled": boolean;
-        "icon"?: IconName1;
-        "iconEnd"?: IconName1;
+        "icon"?: IconName;
         "label"?: string;
         "name"?: string;
         /**
@@ -75,13 +94,51 @@ export namespace Components {
         "variant": DropdownVariant;
     }
     interface LmPrototypeStencilDropdownItem {
-        "icon"?: IconName2;
-        "iconEnd"?: IconName2;
+        "icon"?: IconName;
+        "iconEnd"?: IconName;
         /**
           * @default ''
          */
         "value": string;
     }
+    interface LmPrototypeStencilInput {
+        /**
+          * @default false
+         */
+        "disabled": boolean;
+        "icon"?: IconName;
+        "iconEnd"?: IconName;
+        "label"?: string;
+        "name"?: string;
+        /**
+          * @default ''
+         */
+        "placeholder": string;
+        /**
+          * @default false
+         */
+        "readonly": boolean;
+        /**
+          * @default false
+         */
+        "required": boolean;
+        /**
+          * @default 'md'
+         */
+        "size": InputSize;
+        /**
+          * @default 'text'
+         */
+        "type": InputType;
+        /**
+          * @default ''
+         */
+        "value": string;
+    }
+}
+export interface LmPrototypeStencilCheckboxCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLLmPrototypeStencilCheckboxElement;
 }
 export interface LmPrototypeStencilDropdownCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -91,6 +148,10 @@ export interface LmPrototypeStencilDropdownItemCustomEvent<T> extends CustomEven
     detail: T;
     target: HTMLLmPrototypeStencilDropdownItemElement;
 }
+export interface LmPrototypeStencilInputCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLLmPrototypeStencilInputElement;
+}
 declare global {
     interface HTMLLmPrototypeStencilButtonElement extends Components.LmPrototypeStencilButton, HTMLStencilElement {
     }
@@ -98,8 +159,25 @@ declare global {
         prototype: HTMLLmPrototypeStencilButtonElement;
         new (): HTMLLmPrototypeStencilButtonElement;
     };
+    interface HTMLLmPrototypeStencilCheckboxElementEventMap {
+        "change": { checked: boolean; value: string };
+    }
+    interface HTMLLmPrototypeStencilCheckboxElement extends Components.LmPrototypeStencilCheckbox, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLLmPrototypeStencilCheckboxElementEventMap>(type: K, listener: (this: HTMLLmPrototypeStencilCheckboxElement, ev: LmPrototypeStencilCheckboxCustomEvent<HTMLLmPrototypeStencilCheckboxElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLLmPrototypeStencilCheckboxElementEventMap>(type: K, listener: (this: HTMLLmPrototypeStencilCheckboxElement, ev: LmPrototypeStencilCheckboxCustomEvent<HTMLLmPrototypeStencilCheckboxElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLLmPrototypeStencilCheckboxElement: {
+        prototype: HTMLLmPrototypeStencilCheckboxElement;
+        new (): HTMLLmPrototypeStencilCheckboxElement;
+    };
     interface HTMLLmPrototypeStencilDropdownElementEventMap {
-        "lmChange": { value: string; label: string };
+        "change": { value: string; label: string };
     }
     interface HTMLLmPrototypeStencilDropdownElement extends Components.LmPrototypeStencilDropdown, HTMLStencilElement {
         addEventListener<K extends keyof HTMLLmPrototypeStencilDropdownElementEventMap>(type: K, listener: (this: HTMLLmPrototypeStencilDropdownElement, ev: LmPrototypeStencilDropdownCustomEvent<HTMLLmPrototypeStencilDropdownElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
@@ -132,10 +210,30 @@ declare global {
         prototype: HTMLLmPrototypeStencilDropdownItemElement;
         new (): HTMLLmPrototypeStencilDropdownItemElement;
     };
+    interface HTMLLmPrototypeStencilInputElementEventMap {
+        "lm-input": string;
+        "lm-change": string;
+    }
+    interface HTMLLmPrototypeStencilInputElement extends Components.LmPrototypeStencilInput, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLLmPrototypeStencilInputElementEventMap>(type: K, listener: (this: HTMLLmPrototypeStencilInputElement, ev: LmPrototypeStencilInputCustomEvent<HTMLLmPrototypeStencilInputElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLLmPrototypeStencilInputElementEventMap>(type: K, listener: (this: HTMLLmPrototypeStencilInputElement, ev: LmPrototypeStencilInputCustomEvent<HTMLLmPrototypeStencilInputElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLLmPrototypeStencilInputElement: {
+        prototype: HTMLLmPrototypeStencilInputElement;
+        new (): HTMLLmPrototypeStencilInputElement;
+    };
     interface HTMLElementTagNameMap {
         "lm-prototype-stencil-button": HTMLLmPrototypeStencilButtonElement;
+        "lm-prototype-stencil-checkbox": HTMLLmPrototypeStencilCheckboxElement;
         "lm-prototype-stencil-dropdown": HTMLLmPrototypeStencilDropdownElement;
         "lm-prototype-stencil-dropdown-item": HTMLLmPrototypeStencilDropdownItemElement;
+        "lm-prototype-stencil-input": HTMLLmPrototypeStencilInputElement;
     }
 }
 declare namespace LocalJSX {
@@ -169,6 +267,31 @@ declare namespace LocalJSX {
          */
         "variant"?: ButtonVariant;
     }
+    interface LmPrototypeStencilCheckbox {
+        /**
+          * @default false
+         */
+        "checked"?: boolean;
+        /**
+          * @default false
+         */
+        "disabled"?: boolean;
+        /**
+          * The `id` of a `<form>` element to associate this element with.
+         */
+        "form"?: string;
+        "label"?: string;
+        "name"?: string;
+        "onChange"?: (event: LmPrototypeStencilCheckboxCustomEvent<{ checked: boolean; value: string }>) => void;
+        /**
+          * @default false
+         */
+        "required"?: boolean;
+        /**
+          * @default 'on'
+         */
+        "value"?: string;
+    }
     interface LmPrototypeStencilDropdown {
         /**
           * @default false
@@ -178,11 +301,10 @@ declare namespace LocalJSX {
           * The `id` of a `<form>` element to associate this element with.
          */
         "form"?: string;
-        "icon"?: IconName1;
-        "iconEnd"?: IconName1;
+        "icon"?: IconName;
         "label"?: string;
         "name"?: string;
-        "onLmChange"?: (event: LmPrototypeStencilDropdownCustomEvent<{ value: string; label: string }>) => void;
+        "onChange"?: (event: LmPrototypeStencilDropdownCustomEvent<{ value: string; label: string }>) => void;
         /**
           * @default false
          */
@@ -209,9 +331,49 @@ declare namespace LocalJSX {
         "variant"?: DropdownVariant;
     }
     interface LmPrototypeStencilDropdownItem {
-        "icon"?: IconName2;
-        "iconEnd"?: IconName2;
+        "icon"?: IconName;
+        "iconEnd"?: IconName;
         "onLm-dropdown-item-select"?: (event: LmPrototypeStencilDropdownItemCustomEvent<void>) => void;
+        /**
+          * @default ''
+         */
+        "value"?: string;
+    }
+    interface LmPrototypeStencilInput {
+        /**
+          * @default false
+         */
+        "disabled"?: boolean;
+        /**
+          * The `id` of a `<form>` element to associate this element with.
+         */
+        "form"?: string;
+        "icon"?: IconName;
+        "iconEnd"?: IconName;
+        "label"?: string;
+        "name"?: string;
+        "onLm-change"?: (event: LmPrototypeStencilInputCustomEvent<string>) => void;
+        "onLm-input"?: (event: LmPrototypeStencilInputCustomEvent<string>) => void;
+        /**
+          * @default ''
+         */
+        "placeholder"?: string;
+        /**
+          * @default false
+         */
+        "readonly"?: boolean;
+        /**
+          * @default false
+         */
+        "required"?: boolean;
+        /**
+          * @default 'md'
+         */
+        "size"?: InputSize;
+        /**
+          * @default 'text'
+         */
+        "type"?: InputType;
         /**
           * @default ''
          */
@@ -229,29 +391,51 @@ declare namespace LocalJSX {
         "disabled": boolean;
         "loading": boolean;
     }
+    interface LmPrototypeStencilCheckboxAttributes {
+        "checked": boolean;
+        "disabled": boolean;
+        "required": boolean;
+        "label": string;
+        "value": string;
+        "name": string;
+    }
     interface LmPrototypeStencilDropdownAttributes {
         "open": boolean;
+        "value": string;
         "variant": DropdownVariant;
         "size": DropdownSize;
         "disabled": boolean;
         "required": boolean;
-        "value": string;
+        "icon": IconName;
         "label": string;
         "placeholder": string;
         "name": string;
-        "icon": IconName;
-        "iconEnd": IconName;
     }
     interface LmPrototypeStencilDropdownItemAttributes {
         "value": string;
         "icon": IconName;
         "iconEnd": IconName;
     }
+    interface LmPrototypeStencilInputAttributes {
+        "label": string;
+        "value": string;
+        "name": string;
+        "type": InputType;
+        "placeholder": string;
+        "size": InputSize;
+        "icon": IconName;
+        "iconEnd": IconName;
+        "disabled": boolean;
+        "required": boolean;
+        "readonly": boolean;
+    }
 
     interface IntrinsicElements {
         "lm-prototype-stencil-button": Omit<LmPrototypeStencilButton, keyof LmPrototypeStencilButtonAttributes> & { [K in keyof LmPrototypeStencilButton & keyof LmPrototypeStencilButtonAttributes]?: LmPrototypeStencilButton[K] } & { [K in keyof LmPrototypeStencilButton & keyof LmPrototypeStencilButtonAttributes as `attr:${K}`]?: LmPrototypeStencilButtonAttributes[K] } & { [K in keyof LmPrototypeStencilButton & keyof LmPrototypeStencilButtonAttributes as `prop:${K}`]?: LmPrototypeStencilButton[K] };
+        "lm-prototype-stencil-checkbox": Omit<LmPrototypeStencilCheckbox, keyof LmPrototypeStencilCheckboxAttributes> & { [K in keyof LmPrototypeStencilCheckbox & keyof LmPrototypeStencilCheckboxAttributes]?: LmPrototypeStencilCheckbox[K] } & { [K in keyof LmPrototypeStencilCheckbox & keyof LmPrototypeStencilCheckboxAttributes as `attr:${K}`]?: LmPrototypeStencilCheckboxAttributes[K] } & { [K in keyof LmPrototypeStencilCheckbox & keyof LmPrototypeStencilCheckboxAttributes as `prop:${K}`]?: LmPrototypeStencilCheckbox[K] };
         "lm-prototype-stencil-dropdown": Omit<LmPrototypeStencilDropdown, keyof LmPrototypeStencilDropdownAttributes> & { [K in keyof LmPrototypeStencilDropdown & keyof LmPrototypeStencilDropdownAttributes]?: LmPrototypeStencilDropdown[K] } & { [K in keyof LmPrototypeStencilDropdown & keyof LmPrototypeStencilDropdownAttributes as `attr:${K}`]?: LmPrototypeStencilDropdownAttributes[K] } & { [K in keyof LmPrototypeStencilDropdown & keyof LmPrototypeStencilDropdownAttributes as `prop:${K}`]?: LmPrototypeStencilDropdown[K] };
         "lm-prototype-stencil-dropdown-item": Omit<LmPrototypeStencilDropdownItem, keyof LmPrototypeStencilDropdownItemAttributes> & { [K in keyof LmPrototypeStencilDropdownItem & keyof LmPrototypeStencilDropdownItemAttributes]?: LmPrototypeStencilDropdownItem[K] } & { [K in keyof LmPrototypeStencilDropdownItem & keyof LmPrototypeStencilDropdownItemAttributes as `attr:${K}`]?: LmPrototypeStencilDropdownItemAttributes[K] } & { [K in keyof LmPrototypeStencilDropdownItem & keyof LmPrototypeStencilDropdownItemAttributes as `prop:${K}`]?: LmPrototypeStencilDropdownItem[K] };
+        "lm-prototype-stencil-input": Omit<LmPrototypeStencilInput, keyof LmPrototypeStencilInputAttributes> & { [K in keyof LmPrototypeStencilInput & keyof LmPrototypeStencilInputAttributes]?: LmPrototypeStencilInput[K] } & { [K in keyof LmPrototypeStencilInput & keyof LmPrototypeStencilInputAttributes as `attr:${K}`]?: LmPrototypeStencilInputAttributes[K] } & { [K in keyof LmPrototypeStencilInput & keyof LmPrototypeStencilInputAttributes as `prop:${K}`]?: LmPrototypeStencilInput[K] };
     }
 }
 export { LocalJSX as JSX };
@@ -259,8 +443,10 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "lm-prototype-stencil-button": LocalJSX.IntrinsicElements["lm-prototype-stencil-button"] & JSXBase.HTMLAttributes<HTMLLmPrototypeStencilButtonElement>;
+            "lm-prototype-stencil-checkbox": LocalJSX.IntrinsicElements["lm-prototype-stencil-checkbox"] & JSXBase.HTMLAttributes<HTMLLmPrototypeStencilCheckboxElement>;
             "lm-prototype-stencil-dropdown": LocalJSX.IntrinsicElements["lm-prototype-stencil-dropdown"] & JSXBase.HTMLAttributes<HTMLLmPrototypeStencilDropdownElement>;
             "lm-prototype-stencil-dropdown-item": LocalJSX.IntrinsicElements["lm-prototype-stencil-dropdown-item"] & JSXBase.HTMLAttributes<HTMLLmPrototypeStencilDropdownItemElement>;
+            "lm-prototype-stencil-input": LocalJSX.IntrinsicElements["lm-prototype-stencil-input"] & JSXBase.HTMLAttributes<HTMLLmPrototypeStencilInputElement>;
         }
     }
 }

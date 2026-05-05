@@ -11,11 +11,13 @@ import type { EventName, StencilReactComponent } from '@stencil/react-output-tar
 import { createComponent } from '@stencil/react-output-target/runtime';
 import React from 'react';
 
-import { type LmPrototypeStencilDropdownCustomEvent, type LmPrototypeStencilDropdownItemCustomEvent } from "@lm-prototype-stencil/components";
+import { type LmPrototypeStencilCheckboxCustomEvent, type LmPrototypeStencilDropdownCustomEvent, type LmPrototypeStencilDropdownItemCustomEvent, type LmPrototypeStencilInputCustomEvent } from "@lm-prototype-stencil/components";
 import type { JSX } from "@lm-prototype-stencil/components/dist/components";
 import { LmPrototypeStencilButton as LmPrototypeStencilButtonElement, defineCustomElement as defineLmPrototypeStencilButton } from "@lm-prototype-stencil/components/dist/components/lm-prototype-stencil-button.js";
+import { LmPrototypeStencilCheckbox as LmPrototypeStencilCheckboxElement, defineCustomElement as defineLmPrototypeStencilCheckbox } from "@lm-prototype-stencil/components/dist/components/lm-prototype-stencil-checkbox.js";
 import { LmPrototypeStencilDropdownItem as LmPrototypeStencilDropdownItemElement, defineCustomElement as defineLmPrototypeStencilDropdownItem } from "@lm-prototype-stencil/components/dist/components/lm-prototype-stencil-dropdown-item.js";
 import { LmPrototypeStencilDropdown as LmPrototypeStencilDropdownElement, defineCustomElement as defineLmPrototypeStencilDropdown } from "@lm-prototype-stencil/components/dist/components/lm-prototype-stencil-dropdown.js";
+import { LmPrototypeStencilInput as LmPrototypeStencilInputElement, defineCustomElement as defineLmPrototypeStencilInput } from "@lm-prototype-stencil/components/dist/components/lm-prototype-stencil-input.js";
 
 export type LmPrototypeStencilButtonEvents = NonNullable<unknown>;
 
@@ -28,14 +30,25 @@ export const LmPrototypeStencilButton: StencilReactComponent<LmPrototypeStencilB
     defineCustomElement: defineLmPrototypeStencilButton
 });
 
-export type LmPrototypeStencilDropdownEvents = { onLmChange: EventName<LmPrototypeStencilDropdownCustomEvent<{ value: string; label: string }>> };
+export type LmPrototypeStencilCheckboxEvents = { onChange: EventName<LmPrototypeStencilCheckboxCustomEvent<{ checked: boolean; value: string }>> };
+
+export const LmPrototypeStencilCheckbox: StencilReactComponent<LmPrototypeStencilCheckboxElement, LmPrototypeStencilCheckboxEvents, JSX.LmPrototypeStencilCheckbox> = /*@__PURE__*/ createComponent<LmPrototypeStencilCheckboxElement, LmPrototypeStencilCheckboxEvents, JSX.LmPrototypeStencilCheckbox>({
+    tagName: 'lm-prototype-stencil-checkbox',
+    elementClass: LmPrototypeStencilCheckboxElement,
+    // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
+    react: React,
+    events: { onChange: 'change' } as LmPrototypeStencilCheckboxEvents,
+    defineCustomElement: defineLmPrototypeStencilCheckbox
+});
+
+export type LmPrototypeStencilDropdownEvents = { onChange: EventName<LmPrototypeStencilDropdownCustomEvent<{ value: string; label: string }>> };
 
 export const LmPrototypeStencilDropdown: StencilReactComponent<LmPrototypeStencilDropdownElement, LmPrototypeStencilDropdownEvents, JSX.LmPrototypeStencilDropdown> = /*@__PURE__*/ createComponent<LmPrototypeStencilDropdownElement, LmPrototypeStencilDropdownEvents, JSX.LmPrototypeStencilDropdown>({
     tagName: 'lm-prototype-stencil-dropdown',
     elementClass: LmPrototypeStencilDropdownElement,
     // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
     react: React,
-    events: { onLmChange: 'lmChange' } as LmPrototypeStencilDropdownEvents,
+    events: { onChange: 'change' } as LmPrototypeStencilDropdownEvents,
     defineCustomElement: defineLmPrototypeStencilDropdown
 });
 
@@ -48,4 +61,21 @@ export const LmPrototypeStencilDropdownItem: StencilReactComponent<LmPrototypeSt
     react: React,
     events: { onLmDropdownItemSelect: 'lm-dropdown-item-select' } as LmPrototypeStencilDropdownItemEvents,
     defineCustomElement: defineLmPrototypeStencilDropdownItem
+});
+
+export type LmPrototypeStencilInputEvents = {
+    onLmInput: EventName<LmPrototypeStencilInputCustomEvent<string>>,
+    onLmChange: EventName<LmPrototypeStencilInputCustomEvent<string>>
+};
+
+export const LmPrototypeStencilInput: StencilReactComponent<LmPrototypeStencilInputElement, LmPrototypeStencilInputEvents, JSX.LmPrototypeStencilInput> = /*@__PURE__*/ createComponent<LmPrototypeStencilInputElement, LmPrototypeStencilInputEvents, JSX.LmPrototypeStencilInput>({
+    tagName: 'lm-prototype-stencil-input',
+    elementClass: LmPrototypeStencilInputElement,
+    // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
+    react: React,
+    events: {
+        onLmInput: 'lm-input',
+        onLmChange: 'lm-change'
+    } as LmPrototypeStencilInputEvents,
+    defineCustomElement: defineLmPrototypeStencilInput
 });

@@ -1,4 +1,5 @@
 import type { Preview } from "@storybook/web-components";
+//@ts-ignore
 import '@lm-prototype-stencil/tokens/themes/light.css';
 
 import { defineCustomElements } from '../loader/index.js';
