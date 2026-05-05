@@ -25,7 +25,7 @@
 
 ### Depends on
 
-- [lm-prototype-stencil-icon](../lm-prototype-stencil-icon)
+- [lm-prototype-stencil-icon](../../../../icons)
 
 ### Graph
 ```mermaid

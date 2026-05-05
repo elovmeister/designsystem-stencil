@@ -17,8 +17,8 @@
 
 ### Used by
 
- - [lm-prototype-stencil-dropdown](../lm-protoype-stencil-dropdown)
- - [lm-prototype-stencil-dropdown-item](../lm-protoype-stencil-dropdown)
+ - [lm-prototype-stencil-dropdown](../components/src/components/dropdown)
+ - [lm-prototype-stencil-dropdown-item](../components/src/components/dropdown)
 
 ### Graph
 ```mermaid

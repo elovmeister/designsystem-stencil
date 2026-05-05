@@ -5,34 +5,38 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { DropdownSize, DropdownVariant, IconName } from "./components/lm-protoype-stencil-dropdown/lm-prototype-stencil-dropdown";
-import { IconName as IconName1 } from "./components/lm-protoype-stencil-dropdown/lm-prototype-stencil-dropdown-item";
-import { IconName as IconName2 } from "./utils/icon-registry";
-export { DropdownSize, DropdownVariant, IconName } from "./components/lm-protoype-stencil-dropdown/lm-prototype-stencil-dropdown";
-export { IconName as IconName1 } from "./components/lm-protoype-stencil-dropdown/lm-prototype-stencil-dropdown-item";
-export { IconName as IconName2 } from "./utils/icon-registry";
+import { ButtonSize, ButtonType, ButtonVariant } from "./components/button/lm-prototype-stencil-button";
+import { DropdownSize, DropdownVariant, IconName } from "./components/dropdown/lm-prototype-stencil-dropdown";
+import { IconName as IconName1 } from "./components/dropdown/lm-prototype-stencil-dropdown-item";
+export { ButtonSize, ButtonType, ButtonVariant } from "./components/button/lm-prototype-stencil-button";
+export { DropdownSize, DropdownVariant, IconName } from "./components/dropdown/lm-prototype-stencil-dropdown";
+export { IconName as IconName1 } from "./components/dropdown/lm-prototype-stencil-dropdown-item";
 export namespace Components {
     interface LmPrototypeStencilButton {
         /**
           * @default false
          */
         "disabled": boolean;
+        "icon"?: IconName;
+        "iconEnd"?: IconName;
         /**
           * @default false
          */
         "loading": boolean;
+        "name"?: string;
         /**
           * @default 'md'
          */
-        "size": 'sm' | 'md' | 'lg';
+        "size": ButtonSize;
         /**
           * @default 'button'
          */
-        "type": 'button' | 'submit' | 'reset';
+        "type": ButtonType;
+        "value"?: string;
         /**
           * @default 'primary'
          */
-        "variant": 'primary' | 'secondary' | 'tertiary' | 'danger';
+        "variant": ButtonVariant;
     }
     interface LmPrototypeStencilDropdown {
         /**
@@ -75,10 +79,6 @@ export namespace Components {
           * @default ''
          */
         "value": string;
-    }
-    interface LmPrototypeStencilIcon {
-        "label"?: string;
-        "name": IconName2;
     }
 }
 export interface LmPrototypeStencilDropdownCustomEvent<T> extends CustomEvent<T> {
@@ -130,43 +130,42 @@ declare global {
         prototype: HTMLLmPrototypeStencilDropdownItemElement;
         new (): HTMLLmPrototypeStencilDropdownItemElement;
     };
-    interface HTMLLmPrototypeStencilIconElement extends Components.LmPrototypeStencilIcon, HTMLStencilElement {
-    }
-    var HTMLLmPrototypeStencilIconElement: {
-        prototype: HTMLLmPrototypeStencilIconElement;
-        new (): HTMLLmPrototypeStencilIconElement;
-    };
     interface HTMLElementTagNameMap {
         "lm-prototype-stencil-button": HTMLLmPrototypeStencilButtonElement;
         "lm-prototype-stencil-dropdown": HTMLLmPrototypeStencilDropdownElement;
         "lm-prototype-stencil-dropdown-item": HTMLLmPrototypeStencilDropdownItemElement;
-        "lm-prototype-stencil-icon": HTMLLmPrototypeStencilIconElement;
     }
 }
 declare namespace LocalJSX {
-    type OneOf<K extends string, PropT, AttrT = PropT> = { [P in K]: PropT } & { [P in `attr:${K}` | `prop:${K}`]?: never } | { [P in `attr:${K}`]: AttrT } & { [P in K | `prop:${K}`]?: never } | { [P in `prop:${K}`]: PropT } & { [P in K | `attr:${K}`]?: never };
-
     interface LmPrototypeStencilButton {
         /**
           * @default false
          */
         "disabled"?: boolean;
         /**
+          * The `id` of a `<form>` element to associate this element with.
+         */
+        "form"?: string;
+        "icon"?: IconName;
+        "iconEnd"?: IconName;
+        /**
           * @default false
          */
         "loading"?: boolean;
+        "name"?: string;
         /**
           * @default 'md'
          */
-        "size"?: 'sm' | 'md' | 'lg';
+        "size"?: ButtonSize;
         /**
           * @default 'button'
          */
-        "type"?: 'button' | 'submit' | 'reset';
+        "type"?: ButtonType;
+        "value"?: string;
         /**
           * @default 'primary'
          */
-        "variant"?: 'primary' | 'secondary' | 'tertiary' | 'danger';
+        "variant"?: ButtonVariant;
     }
     interface LmPrototypeStencilDropdown {
         /**
@@ -216,15 +215,15 @@ declare namespace LocalJSX {
          */
         "value"?: string;
     }
-    interface LmPrototypeStencilIcon {
-        "label"?: string;
-        "name": IconName2;
-    }
 
     interface LmPrototypeStencilButtonAttributes {
-        "variant": 'primary' | 'secondary' | 'tertiary' | 'danger';
-        "size": 'sm' | 'md' | 'lg';
-        "type": 'button' | 'submit' | 'reset';
+        "variant": ButtonVariant;
+        "size": ButtonSize;
+        "type": ButtonType;
+        "name": string;
+        "value": string;
+        "icon": string;
+        "iconEnd": string;
         "disabled": boolean;
         "loading": boolean;
     }
@@ -246,16 +245,11 @@ declare namespace LocalJSX {
         "icon": IconName;
         "iconEnd": IconName;
     }
-    interface LmPrototypeStencilIconAttributes {
-        "name": IconName;
-        "label": string;
-    }
 
     interface IntrinsicElements {
         "lm-prototype-stencil-button": Omit<LmPrototypeStencilButton, keyof LmPrototypeStencilButtonAttributes> & { [K in keyof LmPrototypeStencilButton & keyof LmPrototypeStencilButtonAttributes]?: LmPrototypeStencilButton[K] } & { [K in keyof LmPrototypeStencilButton & keyof LmPrototypeStencilButtonAttributes as `attr:${K}`]?: LmPrototypeStencilButtonAttributes[K] } & { [K in keyof LmPrototypeStencilButton & keyof LmPrototypeStencilButtonAttributes as `prop:${K}`]?: LmPrototypeStencilButton[K] };
         "lm-prototype-stencil-dropdown": Omit<LmPrototypeStencilDropdown, keyof LmPrototypeStencilDropdownAttributes> & { [K in keyof LmPrototypeStencilDropdown & keyof LmPrototypeStencilDropdownAttributes]?: LmPrototypeStencilDropdown[K] } & { [K in keyof LmPrototypeStencilDropdown & keyof LmPrototypeStencilDropdownAttributes as `attr:${K}`]?: LmPrototypeStencilDropdownAttributes[K] } & { [K in keyof LmPrototypeStencilDropdown & keyof LmPrototypeStencilDropdownAttributes as `prop:${K}`]?: LmPrototypeStencilDropdown[K] };
         "lm-prototype-stencil-dropdown-item": Omit<LmPrototypeStencilDropdownItem, keyof LmPrototypeStencilDropdownItemAttributes> & { [K in keyof LmPrototypeStencilDropdownItem & keyof LmPrototypeStencilDropdownItemAttributes]?: LmPrototypeStencilDropdownItem[K] } & { [K in keyof LmPrototypeStencilDropdownItem & keyof LmPrototypeStencilDropdownItemAttributes as `attr:${K}`]?: LmPrototypeStencilDropdownItemAttributes[K] } & { [K in keyof LmPrototypeStencilDropdownItem & keyof LmPrototypeStencilDropdownItemAttributes as `prop:${K}`]?: LmPrototypeStencilDropdownItem[K] };
-        "lm-prototype-stencil-icon": Omit<LmPrototypeStencilIcon, keyof LmPrototypeStencilIconAttributes> & { [K in keyof LmPrototypeStencilIcon & keyof LmPrototypeStencilIconAttributes]?: LmPrototypeStencilIcon[K] } & { [K in keyof LmPrototypeStencilIcon & keyof LmPrototypeStencilIconAttributes as `attr:${K}`]?: LmPrototypeStencilIconAttributes[K] } & { [K in keyof LmPrototypeStencilIcon & keyof LmPrototypeStencilIconAttributes as `prop:${K}`]?: LmPrototypeStencilIcon[K] } & OneOf<"name", LmPrototypeStencilIcon["name"], LmPrototypeStencilIconAttributes["name"]>;
     }
 }
 export { LocalJSX as JSX };
@@ -265,7 +259,6 @@ declare module "@stencil/core" {
             "lm-prototype-stencil-button": LocalJSX.IntrinsicElements["lm-prototype-stencil-button"] & JSXBase.HTMLAttributes<HTMLLmPrototypeStencilButtonElement>;
             "lm-prototype-stencil-dropdown": LocalJSX.IntrinsicElements["lm-prototype-stencil-dropdown"] & JSXBase.HTMLAttributes<HTMLLmPrototypeStencilDropdownElement>;
             "lm-prototype-stencil-dropdown-item": LocalJSX.IntrinsicElements["lm-prototype-stencil-dropdown-item"] & JSXBase.HTMLAttributes<HTMLLmPrototypeStencilDropdownItemElement>;
-            "lm-prototype-stencil-icon": LocalJSX.IntrinsicElements["lm-prototype-stencil-icon"] & JSXBase.HTMLAttributes<HTMLLmPrototypeStencilIconElement>;
         }
     }
 }

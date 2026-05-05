@@ -44,7 +44,8 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "@lm-prototype-stencil/tokens": "workspace:*"
+    "@lm-prototype-stencil/tokens": "workspace:*",
+    "@lm-prototype-stencil/icons": "workspace:*"
   },
   "devDependencies": {
     "@stencil/angular-output-target": "^1.3.1",
