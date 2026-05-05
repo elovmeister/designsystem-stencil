@@ -33,7 +33,7 @@
     "loader"
   ],
   "scripts": {
-    "build": "stencil build && node fix-icons-react.mjs",
+    "build": "stencil build && node fix-icons.mjs",
     "dev": "stencil build --watch"
   },
   "devDependencies": {
