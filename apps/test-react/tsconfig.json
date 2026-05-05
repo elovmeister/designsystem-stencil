@@ -9,7 +9,10 @@
     "paths": {
       "@lm-prototype-stencil/components-react": ["../../packages/components-react/src/index.ts"],
       "@lm-prototype-stencil/components/loader": ["../../packages/components/loader"],
-      "@lm-prototype-stencil/components": ["../../packages/components/src/index.ts"]
+      "@lm-prototype-stencil/components": ["../../packages/components/src/index.ts"],
+      "@lm-prototype-stencil/icons/dist/types/components": ["../../packages/icons/dist/types/components.d.ts"],
+      "@lm-prototype-stencil/icons/dist/components/*": ["../../packages/icons/dist/components/*"],
+      "@lm-prototype-stencil/icons/lm-prototype-stencil-icon": ["../../packages/icons/dist/components/lm-prototype-stencil-icon.d.ts"]
     },
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,

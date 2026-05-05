@@ -24,6 +24,7 @@
     "@angular/ssr": "^19.0.0",
     "@lm-prototype-stencil/components": "workspace:*",
     "@lm-prototype-stencil/components-angular": "workspace:*",
+    "@lm-prototype-stencil/icons": "workspace:*",
     "@lm-prototype-stencil/tokens": "workspace:*",
     "express": "^4.18.2",
     "rxjs": "~7.8.0",

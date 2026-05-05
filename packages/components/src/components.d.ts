@@ -6,11 +6,13 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { ButtonSize, ButtonType, ButtonVariant } from "./components/button/lm-prototype-stencil-button";
-import { DropdownSize, DropdownVariant, IconName } from "./components/dropdown/lm-prototype-stencil-dropdown";
-import { IconName as IconName1 } from "./components/dropdown/lm-prototype-stencil-dropdown-item";
+import { IconName } from "@lm-prototype-stencil/icons";
+import { DropdownSize, DropdownVariant, IconName as IconName1 } from "./components/dropdown/lm-prototype-stencil-dropdown";
+import { IconName as IconName2 } from "./components/dropdown/lm-prototype-stencil-dropdown-item";
 export { ButtonSize, ButtonType, ButtonVariant } from "./components/button/lm-prototype-stencil-button";
-export { DropdownSize, DropdownVariant, IconName } from "./components/dropdown/lm-prototype-stencil-dropdown";
-export { IconName as IconName1 } from "./components/dropdown/lm-prototype-stencil-dropdown-item";
+export { IconName } from "@lm-prototype-stencil/icons";
+export { DropdownSize, DropdownVariant, IconName as IconName1 } from "./components/dropdown/lm-prototype-stencil-dropdown";
+export { IconName as IconName2 } from "./components/dropdown/lm-prototype-stencil-dropdown-item";
 export namespace Components {
     interface LmPrototypeStencilButton {
         /**
@@ -43,8 +45,8 @@ export namespace Components {
           * @default false
          */
         "disabled": boolean;
-        "icon"?: IconName;
-        "iconEnd"?: IconName;
+        "icon"?: IconName1;
+        "iconEnd"?: IconName1;
         "label"?: string;
         "name"?: string;
         /**
@@ -73,8 +75,8 @@ export namespace Components {
         "variant": DropdownVariant;
     }
     interface LmPrototypeStencilDropdownItem {
-        "icon"?: IconName1;
-        "iconEnd"?: IconName1;
+        "icon"?: IconName2;
+        "iconEnd"?: IconName2;
         /**
           * @default ''
          */
@@ -176,8 +178,8 @@ declare namespace LocalJSX {
           * The `id` of a `<form>` element to associate this element with.
          */
         "form"?: string;
-        "icon"?: IconName;
-        "iconEnd"?: IconName;
+        "icon"?: IconName1;
+        "iconEnd"?: IconName1;
         "label"?: string;
         "name"?: string;
         "onLmChange"?: (event: LmPrototypeStencilDropdownCustomEvent<{ value: string; label: string }>) => void;
@@ -207,8 +209,8 @@ declare namespace LocalJSX {
         "variant"?: DropdownVariant;
     }
     interface LmPrototypeStencilDropdownItem {
-        "icon"?: IconName1;
-        "iconEnd"?: IconName1;
+        "icon"?: IconName2;
+        "iconEnd"?: IconName2;
         "onLm-dropdown-item-select"?: (event: LmPrototypeStencilDropdownItemCustomEvent<void>) => void;
         /**
           * @default ''
@@ -222,8 +224,8 @@ declare namespace LocalJSX {
         "type": ButtonType;
         "name": string;
         "value": string;
-        "icon": string;
-        "iconEnd": string;
+        "icon": IconName;
+        "iconEnd": IconName;
         "disabled": boolean;
         "loading": boolean;
     }

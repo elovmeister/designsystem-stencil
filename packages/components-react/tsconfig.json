@@ -3,7 +3,12 @@
   "compilerOptions": {
     "outDir": "dist",
     "rootDir": "src",
-    "jsx": "react"
+    "jsx": "react",
+    "paths": {
+      "@lm-prototype-stencil/icons/dist/types/components": ["../icons/dist/types/components.d.ts"],
+      "@lm-prototype-stencil/icons/dist/components/*": ["../icons/dist/components/*"],
+      "@lm-prototype-stencil/icons/lm-prototype-stencil-icon": ["../icons/dist/components/lm-prototype-stencil-icon.d.ts"]
+    }
   },
   "include": ["src/**/*"]
 }
