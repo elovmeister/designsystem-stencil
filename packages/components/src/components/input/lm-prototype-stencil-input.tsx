@@ -1,16 +1,16 @@
-/*
 import {
     Component,
-    Host,
-    h,
     Prop,
     State,
     Element,
+    AttachInternals,
     Event,
     EventEmitter,
-    AttachInternals,
-    Watch
+    Watch,
+    h,
+    Host
 } from '@stencil/core';
+import type { IconName } from '@lm-prototype-stencil/icons';
 
 export type InputType = 'text' | 'email' | 'password' | 'number' | 'search' | 'tel' | 'url';
 export type InputSize = 'sm' | 'md' | 'lg';
@@ -22,8 +22,8 @@ export type InputSize = 'sm' | 'md' | 'lg';
     formAssociated: true
 })
 export class LmPrototypeStencilInput {
-    @Element() el: HTMLElement;
-    @AttachInternals() internals: ElementInternals;
+    @Element() el!: HTMLElement;
+    @AttachInternals() internals!: ElementInternals;
 
     @Prop() label?: string;
     @Prop({ mutable: true, reflect: true }) value = '';
@@ -31,31 +31,36 @@ export class LmPrototypeStencilInput {
     @Prop() type: InputType = 'text';
     @Prop() placeholder = '';
     @Prop({ reflect: true }) size: InputSize = 'md';
-    @Prop() icon?: string;
-    @Prop() iconEnd?: string;
+
+    @Prop() icon?: IconName;
+    @Prop({ attribute: 'icon-end' }) iconEnd?: IconName;
+
     @Prop({ reflect: true }) disabled = false;
     @Prop({ reflect: true }) required = false;
     @Prop({ reflect: true }) readonly = false;
 
     @State() focused = false;
 
-    @Event({ eventName: 'lmInput' }) lmInput: EventEmitter<string>;
-    @Event({ eventName: 'lmChange' }) lmChange: EventEmitter<string>;
+    @Event({ eventName: 'lm-input', bubbles: true, composed: true }) lmInput!: EventEmitter<string>;
+    @Event({ eventName: 'lm-change', bubbles: true, composed: true }) lmChange!: EventEmitter<string>;
 
     private inputId = `lm-input-${Math.random().toString(36).substring(2, 9)}`;
 
     @Watch('value')
-    valueChanged(newValue: string) {
-        this.internals.setFormValue(newValue);
-    }
-
-    componentWillLoad() {
+    syncFormValue() {
         this.internals.setFormValue(this.value);
     }
 
-    formResetCallback() {
+    componentDidLoad() {
+        this.syncFormValue();
+    }
+
+    formDisabledCallback(isDisabled: boolean): void {
+        this.disabled = isDisabled;
+    }
+
+    formResetCallback(): void {
         this.value = this.el.getAttribute('value') || '';
-        this.internals.setFormValue(this.value);
     }
 
     private handleInput = (e: Event) => {
@@ -94,21 +99,19 @@ export class LmPrototypeStencilInput {
                     )}
 
                     <div
-                        class={{
-                            'input-wrapper': true,
-                            'input-wrapper--focused': this.focused,
-                            'input-wrapper--disabled': this.disabled
-                        }}
+                        class={`input-wrapper ${this.focused ? 'input-wrapper--focused' : ''} ${this.disabled ? 'input-wrapper--disabled' : ''}`}
                         part="wrapper"
                     >
-                        <slot name="start" class="input__slot">
-                            {this.icon && (
-                                <lm-prototype-stencil-icon
-                                    name={this.icon as any}
-                                    style={{ marginLeft: 'var(--_px)' }}
-                                ></lm-prototype-stencil-icon>
-                            )}
-                        </slot>
+                        <span class="input__slot">
+                            <slot name="start">
+                                {this.icon && (
+                                    <lm-prototype-stencil-icon
+                                        name={this.icon}
+                                        style={{ marginLeft: 'var(--_px)' }}
+                                    ></lm-prototype-stencil-icon>
+                                )}
+                            </slot>
+                        </span>
 
                         <input
                             id={this.inputId}
@@ -117,33 +120,33 @@ export class LmPrototypeStencilInput {
                             type={this.type}
                             value={this.value}
                             name={this.name}
-                            placeholder={this.placeholder}
+                            placeholder={this.placeholder || undefined}
                             disabled={this.disabled}
                             required={this.required}
                             readOnly={this.readonly}
-                            aria-label={fwdAriaLabel}
-                            aria-labelledby={fwdAriaLabelledby}
-                            aria-describedby={fwdAriaDescribedby}
-                            aria-invalid={fwdAriaInvalid}
+                            aria-label={fwdAriaLabel || undefined}
+                            aria-labelledby={fwdAriaLabelledby || undefined}
+                            aria-describedby={fwdAriaDescribedby || undefined}
+                            aria-invalid={fwdAriaInvalid || undefined}
                             onInput={this.handleInput}
                             onChange={this.handleChange}
                             onFocus={this.handleFocus}
                             onBlur={this.handleBlur}
                         />
 
-                        <slot name="end" class="input__slot">
-                            {this.iconEnd && (
-                                <lm-prototype-stencil-icon
-                                    name={this.iconEnd as any}
-                                    style={{ marginRight: 'var(--_px)' }}
-                                ></lm-prototype-stencil-icon>
-                            )}
-                        </slot>
+                        <span class="input__slot">
+                            <slot name="end">
+                                {this.iconEnd && (
+                                    <lm-prototype-stencil-icon
+                                        name={this.iconEnd}
+                                        style={{ marginRight: 'var(--_px)' }}
+                                    ></lm-prototype-stencil-icon>
+                                )}
+                            </slot>
+                        </span>
                     </div>
                 </div>
             </Host>
         );
     }
 }
-
- */

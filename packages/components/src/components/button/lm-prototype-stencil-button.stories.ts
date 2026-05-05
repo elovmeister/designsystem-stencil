@@ -1,55 +1,94 @@
 import type { Meta, StoryObj } from '@storybook/web-components';
 import { html } from 'lit';
 
-// Grundinställningar för Storybook
 const meta: Meta = {
     title: 'Components/Button',
-    component: 'lm-prototype-stencil-button', // Namnet på din web component
+    component: 'lm-prototype-stencil-button',
     tags: ['autodocs'],
     argTypes: {
         variant: {
-            control: { type: 'select' },
-            options: ['primary', 'secondary', 'danger'],
+            control: 'select',
+            options: ['primary', 'secondary', 'tertiary', 'danger']
         },
-        disabled: {
-            control: 'boolean',
+        size: {
+            control: 'select',
+            options: ['sm', 'md', 'lg']
         },
+        type: {
+            control: 'select',
+            options: ['button', 'submit', 'reset']
+        },
+        disabled: { control: 'boolean' },
+        loading: { control: 'boolean' },
         text: {
             control: 'text',
-            description: 'Texten inuti knappen (Slot)',
-        }
+            description: 'Texten inuti knappen (Slot)'
+        },
+        icon: {
+            control: 'text',
+            description: 'Namn på start-ikonen'
+        },
+        'icon-end': {
+            control: 'text',
+            description: 'Namn på slut-ikonen'
+        },
     },
 };
 export default meta;
 
 type Story = StoryObj;
 
-// En mall för hur knappen ska ritas upp
 const Template = (args: any) => html`
-  <lm-prototype-stencil-button 
-    variant="${args.variant}" 
-    ?disabled="${args.disabled}"
-  >
-    ${args.text}
-  </lm-prototype-stencil-button>
+    <lm-prototype-stencil-button
+        variant=${args.variant}
+        size=${args.size}
+        type=${args.type}
+        ?disabled=${args.disabled}
+        ?loading=${args.loading}
+        icon=${args.icon || undefined}
+        icon-end=${args['icon-end'] || undefined}
+    >
+        ${args.text}
+    </lm-prototype-stencil-button>
 `;
 
-// Vår "Primary" (standard) knapp
 export const Primary: Story = {
     render: Template,
     args: {
         variant: 'primary',
+        size: 'md',
+        type: 'button',
         disabled: false,
+        loading: false,
         text: 'Klicka här',
     },
 };
 
-// En variant för att visa en inaktiverad knapp
-export const Disabled: Story = {
+export const SecondaryWithIcon: Story = {
     render: Template,
     args: {
-        variant: 'primary',
-        disabled: true,
-        text: 'Går ej att klicka',
+        ...Primary.args,
+        variant: 'secondary',
+        text: 'Inställningar',
+        icon: 'settings',
+    },
+};
+
+export const DangerWithEndIcon: Story = {
+    render: Template,
+    args: {
+        ...Primary.args,
+        variant: 'danger',
+        text: 'Ta bort konto',
+        'icon-end': 'trash',
+    },
+};
+
+export const LoadingState: Story = {
+    render: Template,
+    args: {
+        ...Primary.args,
+        loading: true,
+        text: 'Sparar...',
     },
 };
