@@ -1,5 +1,11 @@
 # @lm-prototype-stencil/tokens
 
+## 0.7.0
+
+### Minor Changes
+
+- 6059985: fixed icons
+
 ## 0.6.0
 
 ### Minor Changes

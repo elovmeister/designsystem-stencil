@@ -1,5 +1,17 @@
 # @lm-prototype-stencil/components
 
+## 0.8.0
+
+### Minor Changes
+
+- 6059985: fixed icons
+
+### Patch Changes
+
+- Updated dependencies [6059985]
+  - @lm-prototype-stencil/icons@0.5.0
+  - @lm-prototype-stencil/tokens@0.7.0
+
 ## 0.7.0
 
 ### Minor Changes
