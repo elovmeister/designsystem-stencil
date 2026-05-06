@@ -1,5 +1,11 @@
 # @lm-prototype-stencil/components-angular
 
+## 0.10.0
+
+### Minor Changes
+
+- ff09455: new angular component dependency
+
 ## 0.9.0
 
 ### Minor Changes
