@@ -1,5 +1,11 @@
 # @lm-prototype-stencil/components-angular
 
+## 0.9.0
+
+### Minor Changes
+
+- d1f938b: new angular
+
 ## 0.8.0
 
 ### Minor Changes
