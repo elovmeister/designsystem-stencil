@@ -25,9 +25,10 @@
     "build": "./node_modules/.bin/ngc"
   },
   "devDependencies": {
-    "@angular/compiler-cli": "^19.0.0",
-    "@angular/core": "^19.0.0",
-    "@angular/forms": "^19.0.0",
+    "@angular/compiler": "^19.0.0",
+    "@angular/compiler-cli": "^19.2.21",
+    "@angular/core": "^21.2.11",
+    "@angular/forms": "^21.2.11",
     "rxjs": "^7.8.0",
     "typescript": "^5.5.4"
   }
