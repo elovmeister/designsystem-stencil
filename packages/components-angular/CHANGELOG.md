@@ -1,5 +1,11 @@
 # @lm-prototype-stencil/components-angular
 
+## 0.8.0
+
+### Minor Changes
+
+- d74628a: new angular component
+
 ## 0.7.0
 
 ### Minor Changes
