@@ -21,7 +21,7 @@
       ]
     },
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
+    "emitDecoratorMetadata": false,
     "target": "ES2022",
     "module": "ES2022",
     "moduleResolution": "node"
