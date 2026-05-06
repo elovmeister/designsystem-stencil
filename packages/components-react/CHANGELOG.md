@@ -1,5 +1,16 @@
 # @lm-prototype-stencil/components-react
 
+## 0.8.0
+
+### Minor Changes
+
+- 9bb018c: new version test
+
+### Patch Changes
+
+- Updated dependencies [9bb018c]
+  - @lm-prototype-stencil/components@0.7.0
+
 ## 0.7.0
 
 ### Minor Changes
