@@ -22,9 +22,10 @@
     "rxjs": ">=7.0.0"
   },
   "scripts": {
-    "build": "tsc"
+    "build": "./node_modules/.bin/ngc"
   },
   "devDependencies": {
+    "@angular/compiler-cli": "^19.0.0",
     "@angular/core": "^19.0.0",
     "@angular/forms": "^19.0.0",
     "rxjs": "^7.8.0",

@@ -4,11 +4,21 @@
     "outDir": "dist",
     "rootDir": "src",
     "paths": {
-      "@lm-prototype-stencil/components": ["../components/dist/types/index.d.ts"],
-      "@lm-prototype-stencil/components/dist": ["../components/dist/types/index.d.ts"],
-      "@lm-prototype-stencil/icons/dist/types/components": ["../icons/dist/types/components.d.ts"],
-      "@lm-prototype-stencil/icons/dist/components/*": ["../icons/dist/components/*"],
-      "@lm-prototype-stencil/icons/lm-prototype-stencil-icon": ["../icons/dist/components/lm-prototype-stencil-icon.d.ts"]
+      "@lm-prototype-stencil/components": [
+        "../components/dist/types/index.d.ts"
+      ],
+      "@lm-prototype-stencil/components/dist": [
+        "../components/dist/types/index.d.ts"
+      ],
+      "@lm-prototype-stencil/icons/dist/types/components": [
+        "../icons/dist/types/components.d.ts"
+      ],
+      "@lm-prototype-stencil/icons/dist/components/*": [
+        "../icons/dist/components/*"
+      ],
+      "@lm-prototype-stencil/icons/lm-prototype-stencil-icon": [
+        "../icons/dist/components/lm-prototype-stencil-icon.d.ts"
+      ]
     },
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
@@ -16,5 +26,10 @@
     "module": "ES2022",
     "moduleResolution": "node"
   },
-  "include": ["src/**/*"]
+  "include": [
+    "src/**/*"
+  ],
+  "angularCompilerOptions": {
+    "compilationMode": "partial"
+  }
 }
