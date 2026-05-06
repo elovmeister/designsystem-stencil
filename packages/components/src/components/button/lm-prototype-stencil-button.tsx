@@ -77,9 +77,9 @@ export class LmPrototypeButton {
                         </span>
                     ) : (
                         <span class="btn__icon">
-                            <slot name="start">
+
                                 {this.icon && <lm-prototype-stencil-icon name={this.icon}></lm-prototype-stencil-icon>}
-                            </slot>
+
                         </span>
                     )}
 

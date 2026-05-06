@@ -5,7 +5,7 @@
 .item {
     display: flex;
     align-items: center;
-    gap: var(--lm-prototype-space-2, 8px); /* Avstånd mellan ikon och text */
+    gap: var(--lm-prototype-space-2, 8px);
     padding: var(--lm-prototype-space-2, 8px) var(--lm-prototype-space-4, 16px);
     font-family: var(--lm-prototype-font-family-sans, inherit);
     font-size: var(--lm-prototype-font-size-md, 16px);
@@ -25,5 +25,5 @@
 }
 
 .item__text {
-    flex-grow: 1; /* Detta gör att en eventuell slut-ikon knuffas längst ut till höger */
+    flex-grow: 1;
 }

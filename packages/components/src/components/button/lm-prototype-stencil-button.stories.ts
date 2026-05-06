@@ -70,7 +70,7 @@ export const SecondaryWithIcon: Story = {
         ...Primary.args,
         variant: 'secondary',
         text: 'Inställningar',
-        icon: 'settings',
+        icon: 'check',
     },
 };
 
@@ -80,7 +80,7 @@ export const DangerWithEndIcon: Story = {
         ...Primary.args,
         variant: 'danger',
         text: 'Ta bort konto',
-        'icon-end': 'trash',
+        'icon-end': 'x',
     },
 };
 

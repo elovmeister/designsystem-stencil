@@ -1,10 +1,10 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { LmPrototypeStencilButton, LmPrototypeStencilIcon, LmPrototypeStencilDropdown, LmPrototypeStencilDropdownItem } from '@lm-prototype-stencil/components-angular';
+import { LmPrototypeStencilButton, LmPrototypeStencilDropdown, LmPrototypeStencilDropdownItem } from '@lm-prototype-stencil/components-angular';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [LmPrototypeStencilButton, LmPrototypeStencilIcon, LmPrototypeStencilDropdown, LmPrototypeStencilDropdownItem],
+  imports: [LmPrototypeStencilButton, LmPrototypeStencilDropdown, LmPrototypeStencilDropdownItem],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   template: `
 
@@ -39,16 +39,13 @@ import { LmPrototypeStencilButton, LmPrototypeStencilIcon, LmPrototypeStencilDro
         <section class="demo-section">
           <h2 class="demo-title">With Icons</h2>
           <div class="demo-row">
-            <lm-prototype-stencil-button variant="primary">
-              <lm-prototype-stencil-icon slot="start" name="arrow-right"></lm-prototype-stencil-icon>
+            <lm-prototype-stencil-button variant="primary" icon="arrow-right">
               Continue
             </lm-prototype-stencil-button>
-            <lm-prototype-stencil-button variant="secondary">
+            <lm-prototype-stencil-button variant="secondary" icon="check">
               Save
-              <lm-prototype-stencil-icon slot="end" name="check"></lm-prototype-stencil-icon>
             </lm-prototype-stencil-button>
-            <lm-prototype-stencil-button variant="danger">
-              <lm-prototype-stencil-icon slot="start" name="x"></lm-prototype-stencil-icon>
+            <lm-prototype-stencil-button variant="danger" icon="x">
               Remove
             </lm-prototype-stencil-button>
           </div>

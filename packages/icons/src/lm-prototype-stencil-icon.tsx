@@ -35,7 +35,7 @@ export class LmPrototypeStencilIcon {
                     aria-hidden={this.label ? undefined : 'true'}
                     aria-label={this.label || undefined}
                     role={this.label ? 'img' : undefined}
-                    {... ({ innerHTML: paths } as any )}
+                    ref={(el) => { if (el) el.innerHTML = paths; }}
                 ></svg>
             </Host>
         );

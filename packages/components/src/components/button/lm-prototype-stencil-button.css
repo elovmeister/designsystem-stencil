@@ -31,8 +31,6 @@
     --_border-color: transparent;
 }
 
-/* ── Size overrides ────────────────────────────────────────────────── */
-
 :host([size='sm']) {
     --_px: var(--lm-prototype-stencil-space-3);
     --_py: var(--lm-prototype-stencil-space-1);
@@ -45,15 +43,11 @@
     --_fs: var(--lm-prototype-stencil-font-size-lg);
 }
 
-/* ── Disabled state ────────────────────────────────────────────────── */
-
 :host([disabled]) {
     opacity: 0.5;
     cursor: not-allowed;
     pointer-events: none;
 }
-
-/* ── Base button ───────────────────────────────────────────────────── */
 
 .btn {
     display: inline-flex;
@@ -92,8 +86,6 @@
     pointer-events: none;
 }
 
-/* ── Hover/active states (per variant) ─────────────────────────────── */
-
 :host([variant='primary']) .btn:not(:disabled):hover {
     background: var(--lm-prototype-stencil-color-action-primary-hover);
 }
@@ -111,16 +103,12 @@
     background: var(--lm-prototype-stencil-color-danger-hover);
 }
 
-/* ── Icon slots ────────────────────────────────────────────────────── */
-
 .btn__icon {
     display: inline-flex;
     align-items: center;
     flex-shrink: 0;
     font-size: 1em;
 }
-
-/* ── Loading spinner ───────────────────────────────────────────────── */
 
 .btn__icon--spinner {
     animation: lm-prototype-stencil-spin 0.8s linear infinite;
@@ -130,8 +118,6 @@
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
-
-/* ── Loading state ─────────────────────────────────────────────────── */
 
 :host([loading]) .btn {
     cursor: wait;
