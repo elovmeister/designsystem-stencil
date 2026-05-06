@@ -1,5 +1,11 @@
 # @lm-prototype-stencil/components-angular
 
+## 0.11.0
+
+### Minor Changes
+
+- 626c4f4: again...
+
 ## 0.10.0
 
 ### Minor Changes
