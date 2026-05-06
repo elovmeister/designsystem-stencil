@@ -1,5 +1,11 @@
 # @lm-prototype-stencil/components
 
+## 0.6.0
+
+### Minor Changes
+
+- new version
+
 ## 0.5.0
 
 ### Minor Changes
